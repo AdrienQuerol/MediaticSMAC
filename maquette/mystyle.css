@@ -1,0 +1,10 @@
+body {
+	background-color: grey;
+}
+
+/*  --------------- En tete --------------------  */
+.entete {
+	background-color: #484848;
+	/* 		position:fixed; */
+	height: 150px;
+}
