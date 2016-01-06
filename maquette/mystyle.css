@@ -1,17 +1,24 @@
-body {
-	background-color: grey;
+body.mediaticSMAC {
+	background-color: #F8F8F8 ;
 }
 
 /*  --------------- En tete --------------------  */
 .entete {
-	background-color: #484848;
-	/* 		position:fixed; */
+	background-color: #383838 ;
 	height: 150px;
+	border-style: groove;
 }
 
-.dropdown{
-	position:relative;
-	top:50px;
+.menu{
+	right:20px;
+	top:105px;
+}
+
+
+.logo{
+	background-image: url("livre.gif");
+	height:140px;
+	width:100px;
 }
 
 /* ---------------- Barre de Recherche ------------------- */
