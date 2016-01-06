@@ -1,0 +1,49 @@
+<html>
+<head>
+
+<title>Structure Template</title>
+<link rel="stylesheet" type="text/css" href="mystyle.css" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+<!-- --------------- En tete -------------------- -->
+
+<header class="entete"></header>
+
+<!-- --------------- Contenu (formulaires,résultats,connexion) -------------------- -->
+
+<section class="contenu container" >
+	<div class="row col-md-4 col-md-offset-3">
+		<h1 class="row">Recherche d'un m&eacute;dia</h1>
+		<form class="row">
+			<div>
+			<label for="titleM">Titre du m&eacute;dia</label>
+			<input type="text" name="titleM" id="titlem" />
+			</div>
+
+			<div>
+			<label for="autor">Nom de l'auteur</label>
+			<input type="text" name="autor" id="autor"/>
+			</div>
+
+			<div>
+			<label for="type">Type du m&eacute;dia</label> 
+			<select id="type">
+				<option value="Livre">Livre</option>
+				<option value="CD">CD</option>
+				<option value="DVD">DVD</option>
+				</select>
+			</div>
+			
+			<div>
+			<input type="button" id="recherche" value="rechercher"/>
+			</div>
+			
+		</form>
+	</div>
+</section>
+
+</body>
+</html>
