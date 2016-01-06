@@ -69,48 +69,6 @@ label:after {
 
 
 /* ---------------- Creation ------------------- */
-.contenu {
-/* 	text-align: center; */
-	display: inline-block;
-	padding: 20px;
-/* 	padding: 0; */
-}
-
-.contenu div.label {
-	text-align: right;
-	color: black;
-}
-
-.contenu div.entree {
-	text-align: left;
-}
-
-/* div { */
-/* 	box-sizing: padding-box; */
-/* } */
-
-/* div, section { */
-/* 	border-width: 5px; */
-/* 	border-style: solid; */
-/* 	border-color: red; */
-/* } */
-
-select {
-	width: 100%;
-}
-
-body {
-	text-align: center;
-}
-
-.contenu h1 {
-	margin-top: 0;
-	margin-bottom: 10px;
-}
-
-/* label { */
-/* 	text-align: right; */
-/* } */
 
 
 /* ---------------- Resultat ------------------- */
