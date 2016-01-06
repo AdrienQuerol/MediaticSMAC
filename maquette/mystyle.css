@@ -110,10 +110,11 @@ label:after {
 
 /* ---------------- Login ------------------- */
 
-.mediaticSMACLog{
+.imgfondLog{
 	background-image: url("mediatheque1.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
+	height: 650px;
 }
 
 /*en-tete*/
@@ -124,6 +125,7 @@ label:after {
 }
 
 .logoLog{
+	position:absolute;
 	background-image: url("livre.gif");
 	background-repeat: no-repeat;
 	height:364px;
