@@ -26,6 +26,20 @@ body.mediaticSMAC {
 
 /* ---------------- Recherche ------------------- */
 
+.encadre{
+	margin:100px;
+	background-color: SteelBlue;
+	border-radius: 10px;
+	padding:20px;
+}
+
+				/*label */
+label:after {
+	content: ' : ';
+}
+
+
+
 
 /* ---------------- Creation ------------------- */
 
