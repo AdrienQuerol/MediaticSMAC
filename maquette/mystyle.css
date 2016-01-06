@@ -23,7 +23,34 @@ body.mediaticSMAC {
 
 
 /* ---------------- Barre de Recherche ------------------- */
+form div label.search{
+	
+	font-weight: bold; 
+	font-size: 130%;
+	font-style: solid;
+	margin-left: 20px;
 
+}
+
+div.search {
+	
+	padding: 18px;
+	border-radius : 10px;
+	background-color: steelBlue;
+	display: inline;
+	
+}
+
+.pos {
+	margin-left: 50px;
+	    
+}
+
+ form.search {
+    margin-top: 50px;
+    text-align: center;
+ }
+ 
 
 /* ---------------- Recherche ------------------- */
 

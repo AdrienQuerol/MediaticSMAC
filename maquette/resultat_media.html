@@ -50,7 +50,23 @@
 
 	<!-- --------------- Contenu (formulaires,résultats,connexion) -------------------- -->
 
-
+    <!-- -------------------------- Barre de recherche------------ -------------------- -->
+	<section class="container">
+		<form class="search">
+			<div class="search">
+				<label class="search" for="Recherche">Recherche m&eacutedia </label>
+				 <label class="search" for="title">Titre</label> <input type="text" name="title" id="title"> 
+					<label class="search" for="autor">Auteur</label> <input  type="text" name="autor" id="autor">
+					<label class="search" for="type"> Type </label> <select name="Type" id="type">
+					<option value=""></option>
+					<option value="CD">CD</option>
+					<option value="livre">Livre</option>
+					<option value="DVD">DVD</option>
+				</select>
+				<button class="pos" type=" button" id="rechercher">ok</button>
+			</div>
+		</form>
+	</section>
 	<section class="contenu container-fluid"></section>
 
 
