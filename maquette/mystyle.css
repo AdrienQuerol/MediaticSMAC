@@ -109,3 +109,39 @@ label:after {
 
 
 /* ---------------- Login ------------------- */
+
+.mediaticSMACLog{
+	background-image: url("mediatheque1.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+/*en-tete*/
+.enteteLogin {
+	background-color: #383838 ;
+	height: 300px;
+	border-style: groove;
+}
+
+.logoLog{
+	background-image: url("livre.gif");
+	background-repeat: no-repeat;
+	height:364px;
+	width:393px;
+}
+
+.titLog{
+	color:white;
+	padding:100px;
+}
+
+/*connexion*/
+
+.encadreLog{
+	margin:100px;
+	border-radius: 10px;
+	padding:20px;
+	background-color: Moccasin;
+/* 	opacity: 0.7; */
+}
+
