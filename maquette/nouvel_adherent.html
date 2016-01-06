@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content-type="utf-8" />
+</head>
+<body>
+	<main>
+	<h1>Nouvel adhérent</h1>
+	<form>
+		<div>
+			<label for="nom">nom</label>
+			<input id="nom" name="nom" type="text" required />
+
+		</div>
+		<div>
+			<label for="prenom">Prénom</label>
+			<input id="prenom" name="prenom" type="text" required />
+
+		</div>
+		<div>
+			<label for="naissance">Date de naissance</label>
+			<input id="naissance" name="naissance" type="date" required />
+
+		</div>
+		<div>
+			<label for="email">E-mail</label>
+			<input id="email" name="email" type="email" required />
+		</div>
+		<div>
+			<label for="rue">Adresse</label>
+			<div>
+				<input id="rue" name="rue" type="text" />
+				<input id="code_postal" name="code_postal" type="text" />
+				<input id="ville" name="ville" type="text" />
+			</div>
+		</div>
+		<div>
+			<label for="cotisation">Paiement cotisation</label>
+			<input id="cotisation" name="cotisation" type="date" />
+		</div>
+		<input id="enregistrer" type="submit" value="Enregistrer" />
+	</form>
+	</main>
+</body>
+</html>
