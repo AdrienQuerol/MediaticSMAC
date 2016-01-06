@@ -52,41 +52,43 @@
 
 
 	<section class="contenu container-fluid">
-		<h1>Nouveau média</h1>
-		<form>
-			<div>
-				<div class="col-md-4 label">
-					<label for="titre">Titre</label>
-				</div>
-				<div class="col-md-8 entree">
-					<input id="titre" name="titre" type="text" required />
-				</div>
+		<div class="row col-md-5 col-md-offset-3 encadre">
+			<h1>Nouveau média</h1>
+			<form>
+				<div>
+					<div class="col-md-4 label">
+						<label for="titre" class="control-label">Titre</label>
+					</div>
+					<div class="col-md-5 entree">
+						<input id="titre" name="titre" type="text" required />
+					</div>
 
-			</div>
-			<div>
-				<div class="col-md-4 label">
-					<label for="auteur">Auteur</label>
 				</div>
-				<div class="col-md-8 entree">
-					<input id="auteur" name="auteur" type="text" required />
+				<div>
+					<div class="col-md-4 label">
+						<label for="auteur" class="control-label">Auteur</label>
+					</div>
+					<div class="col-md-5 entree">
+						<input id="auteur" name="auteur" type="text" required />
+					</div>
 				</div>
-			</div>
-			<div>
-				<div class="col-md-4 label">
-					<label for="type">Type</label>
+				<div>
+					<div class="col-md-4 label">
+						<label for="type" class="control-label">Type</label>
+					</div>
+					<div class="col-md-5 entree">
+						<select id="type" name="type" required>
+							<option value="livre">Livre</option>
+							<option value="CD">CD</option>
+							<option value="DVD">DVD</option>
+						</select>
+					</div>
 				</div>
-				<div class="col-md-8 entree">
-					<select id="type" name="type" required>
-						<option value="livre">Livre</option>
-						<option value="CD">CD</option>
-						<option value="DVD">DVD</option>
-					</select>
+				<div class="col-md-8 col-md-offset-4 entree">
+					<input id="enregistrer" type="submit" value="Enregistrer" />
 				</div>
-			</div>
-			<div class="col-md-8 col-md-offset-4 entree">
-				<input id="enregistrer" type="submit" value="Enregistrer" />
-			</div>
-		</form>
+			</form>
+		</div>
 	</section>
 
 </body>
