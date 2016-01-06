@@ -69,6 +69,37 @@ label:after {
 
 
 /* ---------------- Creation ------------------- */
+.form-group.adresse {
+	margin-bottom: 0px;
+}
+
+.form-group.adresse input {
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+.form-group.adresse + .form-group input {
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+}
+
+
+.form-group.adresse + .form-group > .col-md-2 {
+	padding-right: 0px;
+}
+
+.form-group.adresse + .form-group > .col-md-2 > input {
+	border-bottom-right-radius: 0px;
+}
+
+.form-group.adresse + .form-group > .col-md-5 {
+	padding-left: 0px;
+}
+
+
+.form-group.adresse + .form-group > .col-md-5 > input {
+	border-bottom-left-radius: 0px;
+}
 
 
 /* ---------------- Resultat ------------------- */

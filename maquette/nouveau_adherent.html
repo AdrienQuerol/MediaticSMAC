@@ -51,41 +51,72 @@
 
 
 	<section class="contenu container-fluid">
-		<h1>Nouvel adhérent</h1>
-		<form>
-			<div>
-				<label for="nom">nom</label> <input id="nom" name="nom" type="text"
-					required />
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 encadre">
+				<h1 class="text-center">Nouvel adhérent</h1>
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="nom" class="col-md-4 control-label">nom</label>
+						<div class="col-md-7 entree">
+							<input id="nom" name="nom" type="text" placeholder="Dupont" class="form-control"
+								required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="prenom" class="col-md-4 control-label">Prénom</label>
+						<div class="col-md-7 entree">
+							<input id="prenom" name="prenom" type="text" placeholder="Paul" class="form-control"
+								required />
+						</div>
 
-			</div>
-			<div>
-				<label for="prenom">Prénom</label> <input id="prenom" name="prenom"
-					type="text" required />
+					</div>
+					<div class="form-group">
+						<label for="naissance" class="col-md-4 control-label">Date
+							de naissance</label>
+						<div class="col-md-7 entree">
+							<input id="naissance" name="naissance" type="date"
+								class="form-control" required />
+						</div>
 
+					</div>
+					<div class="form-group">
+						<label for="email" class="col-md-4 control-label">E-mail</label>
+						<div class="col-md-7 entree">
+							<input id="email" name="email" type="email" placeholder="paul.dupont@example.com" class="form-control"
+								required />
+						</div>
+					</div>
+					<div class="form-group adresse">
+						<label for="rue" class="col-md-4 control-label">Adresse</label>
+						<div class="col-md-7">
+							<input id="rue" name="rue" type="text" placeholder="rue" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-2 col-md-offset-4">
+							<input id="code_postal" name="code_postal" type="text" placeholder="CP"
+								class="form-control" />
+						</div>
+						<div class="col-md-5">
+							<input id="ville" name="ville" type="text" placeholder="Ville"
+								class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="cotisation" class="col-md-4 control-label">Paiement
+							cotisation</label>
+						<div class="col-md-7">
+							<input id="cotisation" name="cotisation" type="date"
+								class="form-control" />
+						</div>
+					</div>
+					<div class="col-md-7 col-md-offset-5">
+						<input id="enregistrer" type="submit" value="Enregistrer"
+							class="btn btn-success" />
+					</div>
+				</form>
 			</div>
-			<div>
-				<label for="naissance">Date de naissance</label> <input
-					id="naissance" name="naissance" type="date" required />
-
-			</div>
-			<div>
-				<label for="email">E-mail</label> <input id="email" name="email"
-					type="email" required />
-			</div>
-			<div>
-				<label for="rue">Adresse</label>
-				<div>
-					<input id="rue" name="rue" type="text" /> <input id="code_postal"
-						name="code_postal" type="text" /> <input id="ville" name="ville"
-						type="text" />
-				</div>
-			</div>
-			<div>
-				<label for="cotisation">Paiement cotisation</label> <input
-					id="cotisation" name="cotisation" type="date" />
-			</div>
-			<input id="enregistrer" type="submit" value="Enregistrer" />
-		</form>
+		</div>
 	</section>
 
 </body>
