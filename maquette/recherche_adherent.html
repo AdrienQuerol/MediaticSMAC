@@ -12,28 +12,37 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body class="mediaticSMAC">
 
 	<!-- --------------- En tete -------------------- -->
 
 
 	<header class="entete container-fluid">
 		<section class="row">
-			<div class="dropdown .col-md-1 col-md-offset-11 ">
-				<button class="btn btn-primary dropdown-toggle" type="button"
-					data-toggle="dropdown">
-					Menu <span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu">
-					<li class="dropdown-header">Medias</li>
-					<li><a href="#">Recherche de média</a></li>
-					<li><a href="#">Nouveau média</a></li>
-					<li class="dropdown-header">Adhérents</li>
-					<li><a href="#">Recherche d'adhérent</a></li>
-					<li><a href="#">Nouvel adhérent</a></li>
-					<li class="divider"></li>
-					<li><a href="#">Déconnexion</a></li>
-				</ul>
+			<div class="logo col-md-2"></div>
+			<div class="btn-group col-md-3 col-md-offset-7 menu">
+				<div class="btn-group">
+					<button type="button" class="btn btn-primary dropdown-toggle"
+						data-toggle="dropdown">
+						Média <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="recherche_media.html">Recherche</a></li>
+						<li><a href="nouveau_media">Nouveau média</a></li>
+					</ul>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-primary dropdown-toggle"
+						data-toggle="dropdown">
+						Adhérent <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="recherche_adherent.html">Recherche</a></li>
+						<li><a href="nouveau_adherent.html">Nouvel adhérent</a></li>
+					</ul>
+				</div>
+				<a class="btn btn-default btn btn-primary" href="login.html"
+					role="button">Déconnexion</a>
 			</div>
 		</section>
 	</header>
@@ -42,7 +51,37 @@
 	<!-- --------------- Contenu (formulaires,résultats,connexion) -------------------- -->
 
 
-	<section class="contenu container-fluid"></section>
+	<section class="container-fluid">
+		<div class="row col-md-5 col-md-offset-3 encadre">
+			<h1 class="text-center"">Recherche d'un adh&eacute;rent</h1>
+			
+			<form class="form-horizontal">
+				
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="idAdhe">Identifiant</label>
+					<div class="col-md-5">
+						<input type="text" class="form-control" name="idAdhe" id="idAdhe" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="nomAdhe">Nom</label>
+					<div class="col-md-5">
+						<input type="text" class="form-control" name="nomAdhe" id="nomAdhe" />
+					</div>
+				</div>
+
+				<div  class="col-md-5 col-md-offset-5">
+					<input class="btn btn-success" type="button" id="recherche"
+						value="Rechercher" />
+				</div>
+
+			</form>
+		</div>
+
+	</section>
 
 
 </body>
+
+</html>

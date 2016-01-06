@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-<title>Résultat Recherche Média</title>
+<title>Recherche de Média</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="mystyle.css" />
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -12,10 +11,8 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 
-<body class="mediaticSMAC">
-
+<body>
 	<!-- --------------- En tete -------------------- -->
-
 
 	<header class="entete container-fluid">
 		<section class="row">
@@ -47,29 +44,51 @@
 		</section>
 	</header>
 
+	<!-- --------------- Recherche -------------------- -->
 
-	<!-- --------------- Contenu (formulaires,résultats,connexion) -------------------- -->
+	<section class="container-fluid">
+		<div class="row col-md-5 col-md-offset-3 encadre">
+			<h1 class="text-center"">Recherche d'un m&eacute;dia</h1>
 
-    <!-- -------------------------- Barre de recherche------------ -------------------- -->
-	<section class="container">
-		<form class="search">
-			<div class="search">
-				<label class="search" for="Recherche">Recherche m&eacutedia </label>
-				 <label class="search" for="title">Titre</label> <input type="text" name="title" id="title"> 
-					<label class="search" for="autor">Auteur</label> <input  type="text" name="autor" id="autor">
-					<label class="search" for="type"> Type </label> <select name="Type" id="type">
-					<option value=""></option>
-					<option value="CD">CD</option>
-					<option value="livre">Livre</option>
-					<option value="DVD">DVD</option>
-				</select>
-				<button class="pos" type=" button" id="rechercher">ok</button>
-			</div>
-		</form>
+			<form class="form-horizontal">
+
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="titleM">Titre du
+						m&eacute;dia</label>
+					<div class="col-md-5">
+						<input type="text" class="form-control" name="titleM" id="titlem" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="autor">Nom de
+						l'auteur</label>
+					<div class="col-md-5">
+						<input type="text" class="form-control" name="autor" id="autor" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="type">Type du
+						m&eacute;dia</label>
+					<div class="col-md-5">
+						<select id="type" class="form-control">
+							<option value=""></option>
+							<option value="Livre">Livre</option>
+							<option value="CD">CD</option>
+							<option value="DVD">DVD</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-md-5 col-md-offset-5">
+					<input class="btn btn-success" type="button" id="recherche"
+						value="Rechercher" />
+				</div>
+
+			</form>
+		</div>
 	</section>
-	<section class="contenu container-fluid"></section>
-
 
 </body>
-
 </html>
