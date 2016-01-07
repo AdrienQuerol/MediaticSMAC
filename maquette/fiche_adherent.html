@@ -45,15 +45,122 @@
 					role="button">Déconnexion</a>
 			</div>
 		</section>
+		<ol class="cheminDeFer4 breadcrumb">
+			<li><a href="login.html">Accueil</a></li>
+			<li><a href="recherche_adherent.html">Recherche Adhérent</a></li>
+			<li><a href="résultat_adherent.html">Résultat Recherche Adhérent</a></li>
+			<li class="active">Fiche Adhérent</li>
+		</ol>
 	</header>
 
 
 	<!-- --------------- Contenu (formulaires,résultats,connexion) -------------------- -->
 
 
-	<section class="contenu container-fluid"></section>
+	<section class="contenu container-fluid">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 encadre">
+				<section>
+					<h1 class="text-center">Fiche adhérent</h1>
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label for="nom" class="col-md-4 control-label">nom</label>
+							<div class="col-md-7 entree">
+								<input id="nom" name="nom" type="text" placeholder="Dupont"
+									class="form-control" required value="Dupont" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="prenom" class="col-md-4 control-label">Prénom</label>
+							<div class="col-md-7 entree">
+								<input id="prenom" name="prenom" type="text" placeholder="Paul"
+									class="form-control" required value="Paul" />
+							</div>
 
+						</div>
+						<div class="form-group">
+							<label for="naissance" class="col-md-4 control-label">Date
+								de naissance</label>
+							<div class="col-md-7 entree">
+								<input id="naissance" name="naissance" type="date"
+									class="form-control" required value="2000-01-01" />
+							</div>
 
+						</div>
+						<div class="form-group">
+							<label for="email" class="col-md-4 control-label">E-mail</label>
+							<div class="col-md-7 entree">
+								<input id="email" name="email" type="email"
+									placeholder="paul.dupont@example.com" class="form-control"
+									required value="paul.dupont@example.com" />
+							</div>
+						</div>
+						<div class="form-group adresse">
+							<label for="rue" class="col-md-4 control-label">Adresse</label>
+							<div class="col-md-7">
+								<input id="rue" name="rue" type="text" placeholder="rue"
+									class="form-control" value="3 rue de la république" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-2 col-md-offset-4">
+								<input id="code_postal" name="code_postal" type="text"
+									placeholder="CP" class="form-control" value="01234" />
+							</div>
+							<div class="col-md-5">
+								<input id="ville" name="ville" type="text" placeholder="Ville"
+									class="form-control" value="Monvillage" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="cotisation" class="col-md-4 control-label">Paiement
+								cotisation</label>
+							<div class="col-md-7">
+								<input id="cotisation" name="cotisation" type="date"
+									class="form-control" value="2015-07-08" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-7 col-md-offset-5">
+								<input id="enregistrer" type="submit"
+									value="Enregistrer les modifications" class="btn btn-success" />
+							</div>
+						</div>
+					</form>
+				</section>
+				<section>
+					<h1 class="text-center">Nouvel emprunt</h1>
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="titleM">Titre
+								du m&eacute;dia</label>
+							<div class="col-md-5">
+								<input type="text" class="form-control" name="titleM"
+									id="titlem" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="date-emprunt">Date</label>
+							<div class="col-md-5">
+								<input type="date" class="form-control" name="date_emprunt"
+									id="date_emprunt" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-5 col-md-offset-5">
+								<input class="btn btn-success" type="submit" id="ajoutEmprunt"
+									value="Ajouter emprunt" />
+							</div>
+						</div>
+					</form>
+				</section>
+				<section>
+					<h1 class="text-center">Historique des emprunts</h1>
+					(historique à mettre ici)
+				</section>
+			</div>
+		</div>
+	</section>
 </body>
 
 </html>
