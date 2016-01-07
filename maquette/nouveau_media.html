@@ -51,7 +51,7 @@
 			<li><a href="login.html">Accueil</a></li>
 			<li class="active">Nouveau Média</li>
 		</ol>
-		
+
 	</header>
 
 
@@ -63,22 +63,21 @@
 			<div class="col-md-6 col-md-offset-3 encadre">
 				<h1 class="text-center">Nouveau média</h1>
 				<form class="form-horizontal">
-					<div class="form-group">
+					<div class="form-group obligatoire">
 						<label for="titre" class="col-md-4 control-label">Titre</label>
 						<div class="col-md-5 entree">
 							<input id="titre" name="titre" type="text" class="form-control"
 								required />
 						</div>
-
 					</div>
-					<div class="form-group">
+					<div class="form-group obligatoire">
 						<label for="auteur" class="col-md-4 control-label">Auteur</label>
 						<div class="col-md-5 entree">
 							<input id="auteur" name="auteur" type="text" class="form-control"
 								required />
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group obligatoire">
 						<label for="type" class="col-md-4 control-label">Type</label>
 						<div class="col-md-5 entree">
 							<select id="type" name="type" class="form-control" required>
@@ -88,9 +87,11 @@
 							</select>
 						</div>
 					</div>
-					<div class="col-md-5 col-md-offset-5 entree">
-						<input id="enregistrer" type="submit" value="Enregistrer"
-							class="btn btn-success" />
+					<div class="form-group">
+						<div class="col-md-5 col-md-offset-5 entree">
+							<input id="enregistrer" type="submit" value="Enregistrer"
+								class="btn btn-success" />
+						</div>
 					</div>
 				</form>
 			</div>
