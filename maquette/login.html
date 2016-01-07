@@ -12,47 +12,60 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 
-<body class="mediaticSMAC">
+<body>
 
 	<!-- --------------- En tete -------------------- -->
 
 
-	<header class="entete container-fluid">
-		<section class="row">
-			<div class="logo col-md-2"></div>
-			<div class="btn-group col-md-3 col-md-offset-7 menu">
-				<div class="btn-group">
-					<button type="button" class="btn btn-primary dropdown-toggle"
-						data-toggle="dropdown">
-						Média <span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="recherche_media.html">Recherche</a></li>
-						<li><a href="nouveau_media">Nouveau média</a></li>
-					</ul>
-				</div>
-				<div class="btn-group">
-					<button type="button" class="btn btn-primary dropdown-toggle"
-						data-toggle="dropdown">
-						Adhérent <span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="recherche_adherent.html">Recherche</a></li>
-						<li><a href="nouveau_adherent.html">Nouvel adhérent</a></li>
-					</ul>
-				</div>
-				<a class="btn btn-default btn btn-primary" href="login.html"
-					role="button">Déconnexion</a>
-			</div>
+	<header class="container-fluid">
+
+		<section class="row enteteLogin">
+			<div class="logoLog"></div>
+			<h1 class="col-md-4 col-md-offset-4 titLog text-center">
+				M&eacute;diath&egrave;que SMAC</h1>
 		</section>
 	</header>
 
 
 	<!-- --------------- Contenu (formulaires,résultats,connexion) -------------------- -->
 
+	<div class="imgfondLog">
+		<section class="container-fluid">
+			<div class="row fondLog">
+				<div class="col-md-6 col-md-offset-3 encadreLog">
 
-	<section class="contenu container-fluid"></section>
+					<h1 class="text-center ">Connexion</h1>
 
+					<form class="form-horizontal ">
+
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="idLog">Identifiant</label>
+							<div class="col-md-5">
+								<input type="text" class="form-control" name="idLog" id="idLog"
+									required />
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="mdp">Mot de
+								passe</label>
+							<div class="col-md-5">
+								<input type="text" class="form-control" name="mdp" id="mdp"
+									required />
+							</div>
+						</div>
+
+						<div class="col-md-5 col-md-offset-5">
+							<input class="btn btn-success" type="submit" id="connextion"
+								value="Se connecter" />
+						</div>
+
+					</form>
+				</div>
+			</div>
+
+		</section>
+	</div>
 
 </body>
 
