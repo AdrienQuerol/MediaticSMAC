@@ -74,6 +74,43 @@ label:after {
 
 /* ---------------- Resultat ------------------- */
 
+.table-striped>tbody>tr:nth-of-type(even) {
+    background-color: #ffffff;
+}
+
+.tableau th,td{
+	text-align:center;
+}
+
+th span.fleche_haut{
+    background: url("arrow_up.gif") right center no-repeat;
+    padding-right: 15px;
+     padding-top:15px;
+}
+
+th span.fleche_bas{
+    background: url("arrow_down.gif") right center no-repeat;
+    padding-right: 15px;
+   
+}
+
+.caret-inv {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-bottom: 4px dashed;
+    border-bottom: 4px solid\9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+.carets {
+	display: inline-block;
+	width:10px;
+	font-size:5px;
+}
 
 /* ---------------- Fiche ------------------- */
 
