@@ -1,3 +1,10 @@
-$(document).ready(function() {
-	$('#myTable').DataTable();
-});
+
+
+(function (){
+	
+"use strict";
+
+
+
+
+})();
