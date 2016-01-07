@@ -165,6 +165,10 @@ th span.fleche_bas{
 	font-size:5px;
 }
 
+.pagination {
+	text-align:center;
+}
+
 /* ---------------- Fiche ------------------- */
 
 .encadre > section + section {
