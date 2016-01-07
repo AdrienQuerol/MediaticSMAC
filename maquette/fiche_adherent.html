@@ -48,7 +48,7 @@
 		<ol class="cheminDeFer4 breadcrumb">
 			<li><a href="login.html">Accueil</a></li>
 			<li><a href="recherche_adherent.html">Recherche Adhérent</a></li>
-			<li><a href="résultat_adherent.html">Résultat Recherche Adhérent</a></li>
+			<li><a href="resultat_adherent.html">Résultat Recherche Adhérent</a></li>
 			<li class="active">Fiche Adhérent</li>
 		</ol>
 	</header>
@@ -64,7 +64,7 @@
 					<h1 class="text-center">Fiche adhérent</h1>
 					<form class="form-horizontal">
 						<div class="form-group">
-							<label for="nom" class="col-md-4 control-label">nom</label>
+							<label for="nom" class="col-md-4 control-label">Nom</label>
 							<div class="col-md-7 entree">
 								<input id="nom" name="nom" type="text" placeholder="Dupont"
 									class="form-control" required value="Dupont" />
@@ -85,7 +85,10 @@
 								<input id="naissance" name="naissance" type="date"
 									class="form-control" required value="2000-01-01" />
 							</div>
-
+						</div>
+						<div class="form-group">
+							<label for="age" class="col-md-4 control-label">Âge</label>
+							<div class="col-md-7 champ_lecture_seule"><span>50 ans</span></div>
 						</div>
 						<div class="form-group">
 							<label for="email" class="col-md-4 control-label">E-mail</label>
@@ -121,6 +124,10 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label for="fin_abonnement" class="col-md-4 control-label">Fin d'abonnement</label>
+							<div class="col-md-7 champ_lecture_seule"><span>01/01/2020</span></div>
+						</div>
+						<div class="form-group">
 							<div class="col-md-7 col-md-offset-5">
 								<input id="enregistrer" type="submit"
 									value="Enregistrer les modifications" class="btn btn-success" />
@@ -134,20 +141,20 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label" for="titleM">Titre
 								du m&eacute;dia</label>
-							<div class="col-md-5">
+							<div class="col-md-6">
 								<input type="text" class="form-control" name="titleM"
 									id="titlem" />
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-md-4 control-label" for="date-emprunt">Date</label>
-							<div class="col-md-5">
+							<div class="col-md-6">
 								<input type="date" class="form-control" name="date_emprunt"
 									id="date_emprunt" />
 							</div>
 						</div>
 						<div class="form-group">
-							<div class="col-md-5 col-md-offset-5">
+							<div class="col-md-6 col-md-offset-5">
 								<input class="btn btn-success" type="submit" id="ajoutEmprunt"
 									value="Ajouter emprunt" />
 							</div>

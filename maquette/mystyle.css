@@ -24,18 +24,21 @@ body.mediaticSMAC {
 .cheminDeFer2  {
 	position:relative;
 	top:10px;
+	height:30px;
 	width:230px;
 }
 
 .cheminDeFer3  {
 	position:relative;
 	top:10px;
+	height:30px;
 	width:450px;
 }
 
 .cheminDeFer4  {
 	position:relative;
 	top:10px;
+	height:30px;
 	width:560px;
 }
 
@@ -166,6 +169,14 @@ th span.fleche_bas{
 
 .encadre > section + section {
 	margin-top: 50px;
+}
+
+.champ_lecture_seule {
+	margin-top: 7px;
+}
+
+.champ_lecture_seule > span {
+	padding-left: 12px;
 }
 
 /* ---------------- Login ------------------- */
