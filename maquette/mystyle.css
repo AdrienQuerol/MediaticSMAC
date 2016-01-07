@@ -88,8 +88,9 @@ label:after {
 
 
 /* ---------------- Creation ------------------- */
+
 .form-group.adresse {
-	margin-bottom: 0px;
+	margin-bottom: 2px;
 }
 
 .form-group.adresse input {
@@ -104,7 +105,7 @@ label:after {
 
 
 .form-group.adresse + .form-group > .col-md-2 {
-	padding-right: 0px;
+	padding-right: 2px;
 }
 
 .form-group.adresse + .form-group > .col-md-2 > input {
@@ -163,6 +164,9 @@ th span.fleche_bas{
 
 /* ---------------- Fiche ------------------- */
 
+.encadre > section + section {
+	margin-top: 50px;
+}
 
 /* ---------------- Login ------------------- */
 
@@ -199,7 +203,7 @@ th span.fleche_bas{
 	margin:100px;
 	border-radius: 10px;
 	padding:20px;
-	background-color: Moccasin;
+	background-color: steelblue;
 /* 	opacity: 0.7; */
 }
 
