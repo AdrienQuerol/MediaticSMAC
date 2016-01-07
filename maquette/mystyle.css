@@ -171,6 +171,14 @@ th span.fleche_bas{
 	margin-top: 50px;
 }
 
+.champ_lecture_seule {
+	margin-top: 7px;
+}
+
+.champ_lecture_seule > span {
+	padding-left: 12px;
+}
+
 /* ---------------- Login ------------------- */
 
 .imgfondLog{
