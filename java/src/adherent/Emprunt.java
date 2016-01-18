@@ -11,12 +11,50 @@ public class Emprunt {
 	public Emprunt(Adherent a, Media m, LocalDate dateEmprunt) {
 		this.adherent = a;
 		this.media = m;
+		this.dateEmprunt=dateEmprunt;
+		dateRetour = dateEmprunt.plusDays(media.getNbJoursLoues());
+	}
+	
+
+	public Adherent getAdherent() {
+		return adherent;
 	}
 
-	public LocalDate calculerDateRetour() {
 
-		return null;
+	public void setAdherent(Adherent adherent) {
+		this.adherent = adherent;
 	}
+
+
+	public Media getMedia() {
+		return media;
+	}
+
+
+	public void setMedia(Media media) {
+		this.media = media;
+	}
+
+
+	public LocalDate getDateEmprunt() {
+		return dateEmprunt;
+	}
+
+
+	public void setDateEmprunt(LocalDate dateEmprunt) {
+		this.dateEmprunt = dateEmprunt;
+	}
+
+
+	public LocalDate getDateRetour() {
+		return dateRetour;
+	}
+
+
+	public void setDateRetour(LocalDate dateRetour) {
+		this.dateRetour = dateRetour;
+	}
+
 
 	public String toString() {
 		return "Emprunt [adherent=" + adherent + ", media=" + media + ", dateRetour=" + dateRetour + "]";

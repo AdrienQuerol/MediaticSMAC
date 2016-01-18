@@ -22,7 +22,15 @@ public class Adherent {
 		this.dateNaissance = date;
 		listeMediaEmpruntes = new ArrayList<Media>();
 	}
+	
+	public boolean ajoutMedia(Media m){
+		return listeMediaEmpruntes.add(m);
+	}
 
+	public boolean supprMedia(Media m){
+		return listeMediaEmpruntes.remove(m);
+	}
+	
 	public String getNom() {
 		return nom;
 	}
@@ -71,6 +79,30 @@ public class Adherent {
 		return "Adherent [ID=" + ID + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance=" + dateNaissance
 				+ ", dateCotisation=" + dateCotisation + ", mediaEnPossession=" + mediaEnPossession
 				+ ", listeMediaEmpruntes=" + listeMediaEmpruntes + "]";
+	}
+	
+	public int calculAge(){
+		int d1,m1,a1;
+		d1=dateNaissance.getDayOfMonth();
+		m1=dateNaissance.getMonthValue();
+		a1=dateNaissance.getYear();
+		
+		LocalDate now = LocalDate.now();
+		int d2,m2,a2;
+		d2=now.getDayOfMonth();
+		m2=now.getMonthValue();
+		a2=now.getYear();
+		
+		if(m1>m2){
+			return a2-a1-1;
+		}
+		else{
+			if(d1>d2)
+				return a2-a1-1;
+			else
+				return a2-a1;				
+		}
+		
 	}
 
 }
