@@ -6,30 +6,37 @@ import java.util.List;
 import adherent.Emprunt;
 
 public abstract class Media {
-	public abstract String getType (); 
+	public abstract String getType();
 
 	public String getTitre() {
 		return titre;
 	}
+
 	public void setTitre(String titre) {
 		this.titre = titre;
 	}
+
 	public String getAuteur() {
 		return auteur;
 	}
+
 	public void setAuteur(String auteur) {
 		this.auteur = auteur;
 	}
+
 	public int getID() {
 		return ID;
 	}
+
 	public int getNbJoursLoues() {
 		return nbJoursLoues;
 	}
+
 	public List<Emprunt> getEmprunts() {
 		return emprunts;
 	}
-	public void ajouterEmprunt (Emprunt e) {
+
+	public void ajouterEmprunt(Emprunt e) {
 		if (emprunts.contains(e))
 			return;
 
@@ -57,8 +64,15 @@ public abstract class Media {
 			return false;
 		return true;
 	}
-	
-	protected Media (String titre, String auteur, int nbJoursLoues) {
+
+	public String toString() {
+		String s;
+		s = "<" + this.getType() + ":" + this.getID() + " \"" + this.getTitre() + "\" \"" + this.getAuteur() + "\" ";
+		s += this.emprunts.toString() + ">";
+		return s;
+	}
+
+	protected Media(String titre, String auteur, int nbJoursLoues) {
 		this.ID = maxID++;
 		this.titre = titre;
 		this.auteur = auteur;
