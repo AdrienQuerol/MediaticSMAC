@@ -124,9 +124,12 @@ label:after {
 	padding-left: 0px;
 }
 
-
 .form-group.adresse + .form-group > .col-md-5 > input {
 	border-bottom-left-radius: 0px;
+}
+
+.obligatoire label::before {
+	content: '* ';
 }
 
 
