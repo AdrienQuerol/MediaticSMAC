@@ -41,6 +41,7 @@ public abstract class Media {
 			return;
 
 		emprunts.add(e);
+		emprunte = true;
 	}
 
 	@Override
@@ -72,12 +73,17 @@ public abstract class Media {
 		return s;
 	}
 
+	public boolean estEmprunte () {
+		return emprunte;
+	}
+
 	protected Media(String titre, String auteur, int nbJoursLoues) {
 		this.ID = maxID++;
 		this.titre = titre;
 		this.auteur = auteur;
 		this.nbJoursLoues = nbJoursLoues;
 		this.emprunts = new ArrayList<>();
+		this.emprunte = false;
 	}
 
 	private final int ID;
@@ -87,4 +93,5 @@ public abstract class Media {
 	private String auteur;
 	private final int nbJoursLoues;
 	private List<Emprunt> emprunts;
+	private boolean emprunte;
 }
