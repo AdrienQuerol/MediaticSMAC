@@ -55,12 +55,12 @@ public abstract class Media {
 		if (auteur == null) {
 			if (other.auteur != null)
 				return false;
-		} else if (!auteur.equals(other.auteur))
+		} else if (!auteur.toLowerCase().equals(other.auteur.toLowerCase()))
 			return false;
 		if (titre == null) {
 			if (other.titre != null)
 				return false;
-		} else if (!titre.equals(other.titre))
+		} else if (!titre.toLowerCase().equals(other.titre.toLowerCase()))
 			return false;
 		return true;
 	}
