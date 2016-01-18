@@ -1,31 +1,27 @@
 package adherent;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import media.Media;
-
-
 
 public class Adherent {
 
 	protected final int ID;
-	protected static int compteur=0;
+	protected static int compteur = 0;
 	protected String nom, prenom;
-	protected Date dateNaissance, dateCotisation;
+	protected LocalDate dateNaissance, dateCotisation;
 	protected Media mediaEnPossession;
 	protected Collection<Media> listeMediaEmpruntes;
-	
-	public Adherent(String nom, String prenom, Date date){
-		ID=compteur;
+
+	public Adherent(String nom, String prenom, LocalDate date) {
+		ID = compteur;
 		compteur++;
 		this.nom = nom;
-		this.prenom=prenom;
-		this.dateNaissance=date;
-		listeMediaEmpruntes=new ArrayList<Media>();
+		this.prenom = prenom;
+		this.dateNaissance = date;
+		listeMediaEmpruntes = new ArrayList<Media>();
 	}
-
-
 
 	public String getNom() {
 		return nom;
@@ -43,19 +39,19 @@ public class Adherent {
 		this.prenom = prenom;
 	}
 
-	public Date getDateNaissance() {
+	public LocalDate getDateNaissance() {
 		return dateNaissance;
 	}
 
-	public void setDateNaissance(Date dateNaissance) {
+	public void setDateNaissance(LocalDate dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 
-	public Date getDateCotisation() {
+	public LocalDate getDateCotisation() {
 		return dateCotisation;
 	}
 
-	public void setDateCotisation(Date dateCotisation) {
+	public void setDateCotisation(LocalDate dateCotisation) {
 		this.dateCotisation = dateCotisation;
 	}
 
@@ -70,6 +66,11 @@ public class Adherent {
 	public int getID() {
 		return ID;
 	}
-	
-	
+
+	public String toString() {
+		return "Adherent [ID=" + ID + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance=" + dateNaissance
+				+ ", dateCotisation=" + dateCotisation + ", mediaEnPossession=" + mediaEnPossession
+				+ ", listeMediaEmpruntes=" + listeMediaEmpruntes + "]";
+	}
+
 }

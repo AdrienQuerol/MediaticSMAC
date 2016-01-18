@@ -1,21 +1,25 @@
 package adherent;
 
-import java.util.Date;
+import java.time.LocalDate;
 import media.Media;
 
 public class Emprunt {
 	protected Adherent adherent;
 	protected Media media;
-	protected Date dateRetour;
-	
-	public Emprunt(Adherent a, Media m){
-		this.adherent=a;
-		this.media=m;
+	protected LocalDate dateEmprunt, dateRetour;
+
+	public Emprunt(Adherent a, Media m, LocalDate dateEmprunt) {
+		this.adherent = a;
+		this.media = m;
 	}
-	
-	public Date calculerDateRetour(){
-		return new Date();
+
+	public LocalDate calculerDateRetour() {
+
+		return null;
 	}
-	
-	
+
+	public String toString() {
+		return "Emprunt [adherent=" + adherent + ", media=" + media + ", dateRetour=" + dateRetour + "]";
+	}
+
 }
