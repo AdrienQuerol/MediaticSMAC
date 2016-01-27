@@ -25,6 +25,7 @@ public class Adherent extends Personne {
 	protected int montantCotisation;
 
 	public Adherent() {
+		listeMediaEmpruntes = new ArrayList<Emprunt>();
 	}
 
 	public Adherent(String nom, String prenom, LocalDate date) {
