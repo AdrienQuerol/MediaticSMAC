@@ -68,7 +68,7 @@ public class Adherent extends Personne {
 
 	public String toString() {
 		return "Adherent [ID=" + ID + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance=" + dateNaissance
-				+ ", dateCotisation=" + dateCotisation + ", listeMediaEmpruntes=" + listeMediaEmpruntes + "]";
+				+ ", dateCotisation=" + dateCotisation + "]";
 	}
 
 	public int calculAge() {

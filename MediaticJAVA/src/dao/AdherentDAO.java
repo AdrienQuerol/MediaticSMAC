@@ -17,7 +17,7 @@ public class AdherentDAO extends DAO<Adherent> {
 		EntityManager em = PersistenceManagerFactory.instance().createEntityManager();
 		TypedQuery<Adherent> requete = em.createQuery(
 				"SELECT a FROM Adherent a\n" +
-				"WHERE CAST(a.ID AS TEXT)\n" +
+				"WHERE CAST(a.ID AS string)\n" +
 					"LIKE CONCAT(:debutIdent, '%') AND\n" +
 					"a.nom LIKE CONCAT('%', CONCAT(:partieNom, '%'))\n" +
 				"ORDER BY :colonneTri " + (ordreTri != null ? ordreTri.toSQLString() : "ASC"),
