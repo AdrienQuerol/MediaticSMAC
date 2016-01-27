@@ -1,5 +1,6 @@
 .project
 .settings
 .classpath
-/bin/
-/target/
+MediaticJAVA/bin/
+MediaticJAVA/target/
+
