@@ -3,8 +3,10 @@ package modele.test;
 import java.time.LocalDate;
 
 import dao.AdherentDAO;
+import dao.EmpruntDAO;
 import dao.MediaDAO;
 import modele.adherent.Adherent;
+import modele.adherent.Emprunt;
 import modele.media.CD;
 import modele.media.DVD;
 import modele.media.Livre;
@@ -19,7 +21,7 @@ public class TestBD {
 		Media m2 = new DVD("Batman","Joker");
 		Media m3 = new DVD("Star Wars","Lucas");
 		Media m4 = new CD("In extremis","Cabrel");
-		//dao.save(m);
+		dao.save(m);
 		
 		dao.save(m1);
 		dao.save(m2);
@@ -35,16 +37,26 @@ public class TestBD {
 		Adherent a3=new Adherent("Morin","Mikael",LocalDate.of(1992,01,15)); 
 		Adherent a4=new Adherent("Bekkara","Salim",LocalDate.of(1992,9,13)); 
 		
-		AdherentDAO daoA = new AdherentDAO();
 		
-		Emprunt e1=new Emprunt()		
+		Emprunt e1=new Emprunt(a1,m1,LocalDate.now());		
+		Emprunt e2=new Emprunt(a1,m2,LocalDate.now());
+		Emprunt e3=new Emprunt(a3,m1,LocalDate.now());
+		Emprunt e4=new Emprunt(a2,m1,LocalDate.now());
+		
+		EmpruntDAO daoE = new EmpruntDAO();
+		daoE.save(e1);
+		daoE.save(e2);
+		daoE.save(e3);
+		daoE.save(e4);
+		
+		AdherentDAO daoA = new AdherentDAO();
 		
 		daoA.save(a1);
 		daoA.save(a2);
 		daoA.save(a3);
 		daoA.save(a4);
 		
-		daoA.listeAdherents
+		dao.listeAdherents(m1);
 	}
 
 }
