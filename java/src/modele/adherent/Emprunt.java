@@ -8,6 +8,16 @@ public class Emprunt {
 	protected Adherent adherent;
 	protected Media media;
 	protected LocalDate dateEmprunt, dateRetour;
+	
+	// lien avec adherent
+	
+	
+	///
+	
+	// lien avec media
+	
+	
+	///
 
 	public Emprunt(Adherent a, Media m, LocalDate dateEmprunt) {
 		this.adherent = a;

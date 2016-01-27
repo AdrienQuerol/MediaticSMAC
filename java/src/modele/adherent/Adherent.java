@@ -6,23 +6,26 @@ import java.util.Collection;
 
 import modele.media.Media;
 
-public class Adherent {
+public class Adherent extends Personne {
 
-	protected final int ID;
 	protected static int compteur = 0;
-	protected String nom, prenom;
 	protected LocalDate dateNaissance, dateCotisation;
 	protected Media mediaEnPossession;
 	protected Collection<Media> listeMediaEmpruntes;
 	protected int montantCotisation;
 
+	public Adherent() {
+	}
+
 	public Adherent(String nom, String prenom, LocalDate date) {
-		ID = compteur;
-		compteur++;
-		this.nom = nom;
-		this.prenom = prenom;
+		super(nom, prenom);
 		this.dateNaissance = date;
 		listeMediaEmpruntes = new ArrayList<Media>();
+	}
+
+	public Adherent(Long ID, String nom, String prenom, LocalDate date) {
+		this(nom, prenom, date);
+		this.ID = ID;
 	}
 
 	public int getMontantCotisation() {
@@ -79,10 +82,6 @@ public class Adherent {
 
 	public void setMediaEnPossession(Media mediaEnPossession) {
 		this.mediaEnPossession = mediaEnPossession;
-	}
-
-	public int getID() {
-		return ID;
 	}
 
 	public String toString() {
