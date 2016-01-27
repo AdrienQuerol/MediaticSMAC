@@ -8,11 +8,11 @@ import javax.persistence.Converter;
 @Converter(autoApply = true)
 public class ConvertDate implements AttributeConverter<LocalDate, Date> {
 
-    public Date convertToDatabaseColumn(LocalDate date) {
-        return Date.valueOf(date);
-    }
+	public Date convertToDatabaseColumn(LocalDate date) {
+		return date == null ? null : Date.valueOf(date);
+	}
 
-    public LocalDate convertToEntityAttribute(Date value) {
-        return value.toLocalDate();
-    }
+	public LocalDate convertToEntityAttribute(Date value) {
+		return value == null ? null :value.toLocalDate();
+	}
 }

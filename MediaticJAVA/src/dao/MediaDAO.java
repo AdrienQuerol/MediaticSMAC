@@ -33,8 +33,8 @@ public class MediaDAO extends DAO<Media> {
 		em.getTransaction().begin();
 
 		TypedQuery<Adherent> tq = em.createQuery(
-				"select a from Emprunt e join adherent a on  e.adherent.ID=a.ID "
-				+ "join media m on e.media.ID=: id ", Adherent.class);
+				"select a from Emprunt e join e.adherent a "
+				+ "join e.media m where e.media.ID=:id ", Adherent.class);
 		tq.setParameter("id", m.getID());
 		return tq.getResultList();
 	}

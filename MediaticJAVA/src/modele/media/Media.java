@@ -40,6 +40,7 @@ public abstract class Media {
 
 	public Media() {
 		emprunts = new ArrayList<Emprunt>();
+		emprunte = true;
 	}
 
 	public abstract String getType();

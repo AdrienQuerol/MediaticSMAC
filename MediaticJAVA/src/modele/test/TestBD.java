@@ -1,6 +1,7 @@
 package modele.test;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import dao.AdherentDAO;
 import dao.EmpruntDAO;
@@ -21,8 +22,8 @@ public class TestBD {
 		Media m2 = new DVD("Batman","Joker");
 		Media m3 = new DVD("Star Wars","Lucas");
 		Media m4 = new CD("In extremis","Cabrel");
-		dao.save(m);
 		
+		dao.save(m);
 		dao.save(m1);
 		dao.save(m2);
 		dao.save(m3);
@@ -37,6 +38,13 @@ public class TestBD {
 		Adherent a3=new Adherent("Morin","Mikael",LocalDate.of(1992,01,15)); 
 		Adherent a4=new Adherent("Bekkara","Salim",LocalDate.of(1992,9,13)); 
 		
+		AdherentDAO daoA = new AdherentDAO();
+		
+		daoA.save(a1);
+		daoA.save(a2);
+		daoA.save(a3);
+		daoA.save(a4);
+		
 		
 		Emprunt e1=new Emprunt(a1,m1,LocalDate.now());		
 		Emprunt e2=new Emprunt(a1,m2,LocalDate.now());
@@ -49,14 +57,14 @@ public class TestBD {
 		daoE.save(e3);
 		daoE.save(e4);
 		
-		AdherentDAO daoA = new AdherentDAO();
 		
-		daoA.save(a1);
-		daoA.save(a2);
-		daoA.save(a3);
-		daoA.save(a4);
 		
-		dao.listeAdherents(m1);
+		
+		List<Adherent> listAdhe = dao.listeAdherents(m1);
+		for (Adherent adherent : listAdhe) {
+			System.out.println(adherent);
+		}
+		
 	}
 
 }
