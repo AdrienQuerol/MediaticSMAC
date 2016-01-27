@@ -16,7 +16,7 @@ public class Adherent extends Personne {
 
 	public Adherent() {
 	}
-	
+
 	public Adherent(String nom, String prenom, LocalDate date) {
 		super(nom, prenom);
 		this.dateNaissance = date;
@@ -36,7 +36,7 @@ public class Adherent extends Personne {
 		this.montantCotisation = montantCotisation;
 	}
 
-	public boolean ajoutMedia(Media m){
+	public boolean ajoutMedia(Media m) {
 		return listeMediaEmpruntes.add(m);
 	}
 
