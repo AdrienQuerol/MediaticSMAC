@@ -1,4 +1,4 @@
-package utils;
+package modele.util;
 
 public class EmailInvalideException extends Exception {
 

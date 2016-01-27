@@ -1,9 +1,10 @@
-package adherent;
+package modele.adherent;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
-import media.Media;
+
+import modele.media.Media;
 
 public class Adherent {
 
@@ -13,6 +14,7 @@ public class Adherent {
 	protected LocalDate dateNaissance, dateCotisation;
 	protected Media mediaEnPossession;
 	protected Collection<Media> listeMediaEmpruntes;
+	protected int montantCotisation;
 
 	public Adherent(String nom, String prenom, LocalDate date) {
 		ID = compteur;
@@ -22,15 +24,23 @@ public class Adherent {
 		this.dateNaissance = date;
 		listeMediaEmpruntes = new ArrayList<Media>();
 	}
-	
-	public boolean ajoutMedia(Media m){
+
+	public int getMontantCotisation() {
+		return montantCotisation;
+	}
+
+	public void setMontantCotisation(int montantCotisation) {
+		this.montantCotisation = montantCotisation;
+	}
+
+	public boolean ajoutMedia(Media m) {
 		return listeMediaEmpruntes.add(m);
 	}
 
-	public boolean supprMedia(Media m){
+	public boolean supprMedia(Media m) {
 		return listeMediaEmpruntes.remove(m);
 	}
-	
+
 	public String getNom() {
 		return nom;
 	}
@@ -80,29 +90,28 @@ public class Adherent {
 				+ ", dateCotisation=" + dateCotisation + ", mediaEnPossession=" + mediaEnPossession
 				+ ", listeMediaEmpruntes=" + listeMediaEmpruntes + "]";
 	}
-	
-	public int calculAge(){
-		int d1,m1,a1;
-		d1=dateNaissance.getDayOfMonth();
-		m1=dateNaissance.getMonthValue();
-		a1=dateNaissance.getYear();
-		
+
+	public int calculAge() {
+		int d1, m1, a1;
+		d1 = dateNaissance.getDayOfMonth();
+		m1 = dateNaissance.getMonthValue();
+		a1 = dateNaissance.getYear();
+
 		LocalDate now = LocalDate.now();
-		int d2,m2,a2;
-		d2=now.getDayOfMonth();
-		m2=now.getMonthValue();
-		a2=now.getYear();
-		
-		if(m1>m2){
-			return a2-a1-1;
-		}
-		else{
-			if(d1>d2)
-				return a2-a1-1;
+		int d2, m2, a2;
+		d2 = now.getDayOfMonth();
+		m2 = now.getMonthValue();
+		a2 = now.getYear();
+
+		if (m1 > m2) {
+			return a2 - a1 - 1;
+		} else {
+			if (d1 > d2)
+				return a2 - a1 - 1;
 			else
-				return a2-a1;				
+				return a2 - a1;
 		}
-		
+
 	}
 
 }

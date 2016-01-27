@@ -1,7 +1,11 @@
-package utils;
+package modele.util;
 
+
+import java.util.Collection;
 
 import org.apache.commons.validator.routines.EmailValidator;
+
+import modele.adherent.Adherent;
 
 
 
@@ -12,5 +16,9 @@ public class Utils {
 			return true;
 		
 		throw new EmailInvalideException(email);
+	}
+
+	public void trieAdherentNom(Collection<Adherent> liste){
+		
 	}
 }

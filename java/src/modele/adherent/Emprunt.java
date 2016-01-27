@@ -1,7 +1,8 @@
-package adherent;
+package modele.adherent;
 
 import java.time.LocalDate;
-import media.Media;
+
+import modele.media.Media;
 
 public class Emprunt {
 	protected Adherent adherent;

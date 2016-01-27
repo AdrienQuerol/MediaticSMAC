@@ -1,9 +1,9 @@
-package media;
+package modele.media;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import adherent.Emprunt;
+import modele.adherent.Emprunt;
 
 public abstract class Media {
 	public abstract String getType();

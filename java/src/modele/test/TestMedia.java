@@ -1,9 +1,9 @@
-package test;
+package modele.test;
 
-import media.CD;
-import media.DVD;
-import media.Livre;
-import media.Media;
+import modele.media.CD;
+import modele.media.DVD;
+import modele.media.Livre;
+import modele.media.Media;
 
 public class TestMedia {
 	public static void main(String[] args) throws Exception {

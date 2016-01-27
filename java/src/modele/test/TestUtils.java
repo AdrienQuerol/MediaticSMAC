@@ -1,14 +1,14 @@
-package test;
+package modele.test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import media.CD;
-import media.DVD;
-import media.Livre;
-import media.Media;
-import utils.EmailInvalideException;
-import utils.Utils;
+import modele.media.CD;
+import modele.media.DVD;
+import modele.media.Livre;
+import modele.media.Media;
+import modele.util.EmailInvalideException;
+import modele.util.Utils;
 
 public class TestUtils {
 	public static void main (String[] args) {

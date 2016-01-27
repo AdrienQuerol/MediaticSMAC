@@ -1,11 +1,11 @@
-package test;
+package modele.test;
 
 import java.time.LocalDate;
 
-import adherent.Adherent;
-import adherent.Emprunt;
-import media.Livre;
-import media.Media;
+import modele.adherent.Adherent;
+import modele.adherent.Emprunt;
+import modele.media.Livre;
+import modele.media.Media;
 
 public class TestAdherent {
 

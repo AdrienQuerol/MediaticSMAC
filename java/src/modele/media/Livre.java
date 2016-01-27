@@ -1,4 +1,4 @@
-package media;
+package modele.media;
 
 public class Livre extends Media {
 
