@@ -11,9 +11,10 @@ public class CD extends Media {
 
 	public CD (String titre, String auteur) {
 		super(titre, auteur);
+
 	}
-	
-	public String getType () {
+
+	public String getType() {
 		return "CD";
 	}
 

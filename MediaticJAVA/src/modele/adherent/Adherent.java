@@ -30,8 +30,9 @@ public class Adherent extends Personne {
 	public Adherent(String nom, String prenom, LocalDate date) {
 		super(nom, prenom);
 		this.dateNaissance = date;
+
 		listeMediaEmpruntes = new ArrayList<Emprunt>();
-	}	
+	}
 
 	public int getMontantCotisation() {
 		return montantCotisation;
@@ -47,22 +48,6 @@ public class Adherent extends Personne {
 
 	public boolean supprMedia(Media m) {
 		return listeMediaEmpruntes.remove(m);
-	}
-
-	public String getNom() {
-		return nom;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	public String getPrenom() {
-		return prenom;
-	}
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
 	}
 
 	public LocalDate getDateNaissance() {

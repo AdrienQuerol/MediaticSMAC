@@ -12,8 +12,8 @@ public class DVD extends Media {
 	public DVD(){
 		super();
 	}
-	
-	public String getType () {
+
+	public String getType() {
 		return "DVD";
 	}
 

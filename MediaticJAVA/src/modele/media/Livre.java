@@ -5,15 +5,15 @@ import javax.persistence.Entity;
 @Entity
 public class Livre extends Media {
 
-	public Livre (String titre, String auteur) {
+	public Livre(String titre, String auteur) {
 		super(titre, auteur);
 	}
-	
-	public Livre(){
+
+	public Livre() {
 		super();
 	}
-	
-	public String getType () {
+
+	public String getType() {
 		return "Livre";
 	}
 

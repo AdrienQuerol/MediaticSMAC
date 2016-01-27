@@ -8,29 +8,29 @@ import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Personne {
-	
+
 	@Id
 	@GeneratedValue
 	protected Long ID;
-	
+
 	@Column
 	protected String nom, prenom;
-	
+
 	public Personne() {
 	}
-	
+
 	public Personne(String nom, String prenom) {
 		this.nom = nom;
 		this.prenom = prenom;
 	}
-	
+
 	public Personne(Long ID, String nom, String prenom) {
 		this(nom, prenom);
 		this.ID = ID;
 	}
-	
+
 	public Long getID() {
 		return ID;
 	}
@@ -54,7 +54,5 @@ public abstract class Personne {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-
-	
 
 }

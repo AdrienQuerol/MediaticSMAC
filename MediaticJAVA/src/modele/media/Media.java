@@ -16,28 +16,27 @@ import modele.adherent.Emprunt;
 @Entity
 @Inheritance
 public abstract class Media {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected Long ID;
 
 	@Column
 	private String titre;
 	@Column
 	private String auteur;
-	
+
 	@OneToMany(mappedBy = "media")
 	private List<Emprunt> emprunts;
-	
+
 	@Column
-	private boolean emprunte;	
-	
-	public Media(){}
-	
+	private boolean emprunte;
+
+	public Media() {
+	}
+
 	public abstract String getType();
 
-	
-	
 	public String getTitre() {
 		return titre;
 	}
@@ -101,17 +100,15 @@ public abstract class Media {
 		return s;
 	}
 
-	public boolean estEmprunte () {
+	public boolean estEmprunte() {
 		return emprunte;
 	}
 
 	protected Media(String titre, String auteur) {
 		this.titre = titre;
-		this.auteur = auteur;	
+		this.auteur = auteur;
 		this.emprunts = new ArrayList<Emprunt>();
 		this.emprunte = false;
 	}
 
-	
-	
 }
