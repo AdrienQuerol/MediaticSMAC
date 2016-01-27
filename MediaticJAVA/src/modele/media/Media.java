@@ -13,9 +13,9 @@ import modele.adherent.Emprunt;
 
 @Entity
 public abstract class Media {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private final int ID;
 	private static int maxID = 0;
 
@@ -25,18 +25,12 @@ public abstract class Media {
 	private String auteur;
 	@Column
 	private final int nbJoursLoues;
-	
-	
+
 	private List<Emprunt> emprunts;
-	
+
 	@Column
 	private boolean emprunte;
-	
-	
-	
-	
-	
-	
+
 	public abstract String getType();
 
 	public String getTitre() {
@@ -104,7 +98,7 @@ public abstract class Media {
 		return s;
 	}
 
-	public boolean estEmprunte () {
+	public boolean estEmprunte() {
 		return emprunte;
 	}
 
@@ -117,6 +111,4 @@ public abstract class Media {
 		this.emprunte = false;
 	}
 
-	
-	
 }

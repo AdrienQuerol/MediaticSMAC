@@ -1,20 +1,20 @@
 package modele.adherent;
 
 public abstract class Personne {
-	
+
 	public Personne() {
 	}
-	
+
 	public Personne(String nom, String prenom) {
 		this.nom = nom;
 		this.prenom = prenom;
 	}
-	
+
 	public Personne(Long ID, String nom, String prenom) {
 		this(nom, prenom);
 		this.ID = ID;
 	}
-	
+
 	public Long getID() {
 		return ID;
 	}
