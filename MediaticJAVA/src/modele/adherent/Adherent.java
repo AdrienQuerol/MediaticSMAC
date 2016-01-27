@@ -25,7 +25,7 @@ public class Adherent extends Personne {
 
 	public Adherent(Long ID, String nom, String prenom, LocalDate date) {
 		this(nom, prenom, date);
-		this.ID = ID;
+		super.ID = ID;
 	}
 
 	public int getMontantCotisation() {
@@ -42,22 +42,6 @@ public class Adherent extends Personne {
 
 	public boolean supprMedia(Media m) {
 		return listeMediaEmpruntes.remove(m);
-	}
-
-	public String getNom() {
-		return nom;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	public String getPrenom() {
-		return prenom;
-	}
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
 	}
 
 	public LocalDate getDateNaissance() {
