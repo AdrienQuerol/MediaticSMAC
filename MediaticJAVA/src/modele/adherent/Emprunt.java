@@ -40,6 +40,8 @@ public class Emprunt {
 		this.media = m;
 		this.dateEmprunt = dateEmprunt;
 		dateRetour = dateEmprunt.plusDays(media.getNbJoursLoues());
+		a.ajoutMedia(this);
+		m.ajouterEmprunt(this);
 	}
 	
 	public Emprunt(){}

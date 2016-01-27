@@ -10,10 +10,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import modele.adherent.Emprunt;
 
 @Entity
+@Table(uniqueConstraints={@UniqueConstraint(columnNames={"titre","auteur"})})
 @Inheritance
 public abstract class Media {
 
@@ -31,6 +34,9 @@ public abstract class Media {
 
 	@Column
 	private boolean emprunte;
+	
+	@Column(insertable=false, updatable=false )
+	protected String dtype;
 
 	public Media() {
 		emprunts = new ArrayList<Emprunt>();
@@ -94,11 +100,9 @@ public abstract class Media {
 		return true;
 	}
 
+	@Override
 	public String toString() {
-		String s;
-		s = "<" + this.getType() + ":" + this.getID() + " \"" + this.getTitre() + "\" \"" + this.getAuteur() + "\" ";
-		s += this.emprunts.toString() + ">";
-		return s;
+		return "Media [ID=" + ID + ", titre=" + titre + ", auteur=" + auteur + ", emprunte=" + emprunte + "]";
 	}
 
 	public boolean estEmprunte() {
