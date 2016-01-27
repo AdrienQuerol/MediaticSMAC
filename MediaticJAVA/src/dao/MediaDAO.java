@@ -1,7 +1,6 @@
 package dao;
 
-
-import javax.print.attribute.standard.Media;
+import modele.media.Media;
 
 public class MediaDAO extends DAO<Media> {
 

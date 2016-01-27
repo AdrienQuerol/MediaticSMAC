@@ -8,7 +8,7 @@ public class DAO<T> {
 		this.classe = classe;
 	}
 
-	void save(T o) {
+	public void save(T o) {
 		EntityManager em = PersistenceManagerFactory.instance().createEntityManager();
 		em.getTransaction().begin();
 		em.persist(o);
@@ -16,14 +16,14 @@ public class DAO<T> {
 		em.close();
 	}
 	
-	T get(Long id) {
+	public T get(Long id) {
 		EntityManager em = PersistenceManagerFactory.instance().createEntityManager();
 		T obj = em.find(this.classe, id);
 		em.close();
 		return obj;
 	}
 	
-	void update(T obj) {
+	public void update(T obj) {
 		EntityManager em = PersistenceManagerFactory.instance().createEntityManager();
 		em.getTransaction().begin();
 		em.merge(obj);
