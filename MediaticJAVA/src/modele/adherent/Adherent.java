@@ -4,49 +4,28 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-
 import modele.media.Media;
 
-@Entity
-public class Adherent {
+public class Adherent extends Personne {
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private final int ID;
-	
-	@Column
-	private String nom, prenom;
-	
-	@Column
-	private int montantCotisation;
-		
-	@Column
-	private LocalDate dateNaissance, dateCotisation;
-	
-	@ManyToMany
-	private Collection<Media> listeMediaEmpruntes;
-	
-	
-	private Media mediaEnPossession;
-	
-	
-	
+	protected static int compteur = 0;
+	protected LocalDate dateNaissance, dateCotisation;
+	protected Media mediaEnPossession;
+	protected Collection<Media> listeMediaEmpruntes;
+	protected int montantCotisation;
 
-	private static int compteur = 0;
-	
+	public Adherent() {
+	}
+
 	public Adherent(String nom, String prenom, LocalDate date) {
-		ID = compteur;
-		compteur++;
-		this.nom = nom;
-		this.prenom = prenom;
+		super(nom, prenom);
 		this.dateNaissance = date;
 		listeMediaEmpruntes = new ArrayList<Media>();
+	}
+
+	public Adherent(Long ID, String nom, String prenom, LocalDate date) {
+		this(nom, prenom, date);
+		this.ID = ID;
 	}
 
 	public int getMontantCotisation() {
@@ -103,10 +82,6 @@ public class Adherent {
 
 	public void setMediaEnPossession(Media mediaEnPossession) {
 		this.mediaEnPossession = mediaEnPossession;
-	}
-
-	public int getID() {
-		return ID;
 	}
 
 	public String toString() {
