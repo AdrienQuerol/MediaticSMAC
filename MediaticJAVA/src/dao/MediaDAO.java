@@ -15,17 +15,17 @@ public class MediaDAO extends DAO<Media> {
 		super(Media.class);
 	}
 
-	public Media rechercheMedia(String titre, String auteur, String type) {
+	public List<Media> rechercheMedia(String titre, String auteur, String type) {
 		EntityManager em = PersistenceManagerFactory.instance().createEntityManager();
 		em.getTransaction().begin();
 
 		TypedQuery<Media> tq = em.createQuery(
-				"select m from Media m where m.titre=:titre and m.auteur=:auteur and m.dtype=:type", Media.class);
+				"select m from Media m where m.titre LIKE :titre or m.auteur Like :auteur and m.dtype=:type", Media.class);
 
-		tq.setParameter("titre", titre);
-		tq.setParameter("auteur", auteur);
+		tq.setParameter("titre", "%"+ titre+"%");
+		tq.setParameter("auteur", "%"+auteur+"%");
 		tq.setParameter("type", type);
-		return tq.getSingleResult();
+		return tq.getResultList();
 	}
 
 	public List<Adherent> listeAdherents(Media m) {

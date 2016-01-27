@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 public class Utilisateur extends Personne {
 
 	public Utilisateur() {
+		super();
 	}
 
 	public Utilisateur(String nom, String prenom) {
