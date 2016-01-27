@@ -12,8 +12,6 @@ import modele.media.Media;
 
 @Entity
 public class Adherent extends Personne {
-
-	protected static int compteur = 0;
 	
 	@Column
 	protected LocalDate dateNaissance, dateCotisation;
