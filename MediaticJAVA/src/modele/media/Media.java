@@ -8,37 +8,36 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.OneToMany;
 
 import modele.adherent.Emprunt;
 
 @Entity
+@Inheritance
 public abstract class Media {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private final int ID;
-	private static int maxID = 0;
+	protected Long ID;
 
 	@Column
 	private String titre;
 	@Column
 	private String auteur;
-	@Column
-	private final int nbJoursLoues;
 	
-	
+	@OneToMany(mappedBy = "media")
 	private List<Emprunt> emprunts;
 	
 	@Column
-	private boolean emprunte;
+	private boolean emprunte;	
 	
-	
-	
-	
-	
+	public Media(){}
 	
 	public abstract String getType();
 
+	
+	
 	public String getTitre() {
 		return titre;
 	}
@@ -55,13 +54,11 @@ public abstract class Media {
 		this.auteur = auteur;
 	}
 
-	public int getID() {
+	public Long getID() {
 		return ID;
 	}
 
-	public int getNbJoursLoues() {
-		return nbJoursLoues;
-	}
+	public abstract int getNbJoursLoues();
 
 	public List<Emprunt> getEmprunts() {
 		return emprunts;
@@ -108,12 +105,10 @@ public abstract class Media {
 		return emprunte;
 	}
 
-	protected Media(String titre, String auteur, int nbJoursLoues) {
-		this.ID = maxID++;
+	protected Media(String titre, String auteur) {
 		this.titre = titre;
-		this.auteur = auteur;
-		this.nbJoursLoues = nbJoursLoues;
-		this.emprunts = new ArrayList<>();
+		this.auteur = auteur;	
+		this.emprunts = new ArrayList<Emprunt>();
 		this.emprunte = false;
 	}
 

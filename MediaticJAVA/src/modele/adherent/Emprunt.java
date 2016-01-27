@@ -2,11 +2,29 @@ package modele.adherent;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 import modele.media.Media;
 
+@Entity
 public class Emprunt {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long ID;
+
+	@ManyToOne
 	protected Adherent adherent;
+	
+	@ManyToOne
 	protected Media media;
+	
+	@Column
 	protected LocalDate dateEmprunt, dateRetour;
 	
 	// lien avec adherent
@@ -24,6 +42,12 @@ public class Emprunt {
 		this.media = m;
 		this.dateEmprunt=dateEmprunt;
 		dateRetour = dateEmprunt.plusDays(media.getNbJoursLoues());
+	}
+	
+	public Emprunt(){}
+	
+	public Long getID() {
+		return ID;
 	}
 	
 

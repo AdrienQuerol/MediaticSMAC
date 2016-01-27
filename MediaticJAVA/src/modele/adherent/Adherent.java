@@ -4,14 +4,24 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
 import modele.media.Media;
 
+@Entity
 public class Adherent extends Personne {
 
 	protected static int compteur = 0;
+	
+	@Column
 	protected LocalDate dateNaissance, dateCotisation;
-	protected Media mediaEnPossession;
-	protected Collection<Media> listeMediaEmpruntes;
+	
+	@OneToMany(mappedBy = "adherent")
+	protected Collection<Emprunt> listeMediaEmpruntes;
+	
+	@Column
 	protected int montantCotisation;
 
 	public Adherent() {
@@ -20,13 +30,8 @@ public class Adherent extends Personne {
 	public Adherent(String nom, String prenom, LocalDate date) {
 		super(nom, prenom);
 		this.dateNaissance = date;
-		listeMediaEmpruntes = new ArrayList<Media>();
-	}
-
-	public Adherent(Long ID, String nom, String prenom, LocalDate date) {
-		this(nom, prenom, date);
-		this.ID = ID;
-	}
+		listeMediaEmpruntes = new ArrayList<Emprunt>();
+	}	
 
 	public int getMontantCotisation() {
 		return montantCotisation;
@@ -36,7 +41,7 @@ public class Adherent extends Personne {
 		this.montantCotisation = montantCotisation;
 	}
 
-	public boolean ajoutMedia(Media m) {
+	public boolean ajoutMedia(Emprunt m) {
 		return listeMediaEmpruntes.add(m);
 	}
 
@@ -76,18 +81,10 @@ public class Adherent extends Personne {
 		this.dateCotisation = dateCotisation;
 	}
 
-	public Media getMediaEnPossession() {
-		return mediaEnPossession;
-	}
-
-	public void setMediaEnPossession(Media mediaEnPossession) {
-		this.mediaEnPossession = mediaEnPossession;
-	}
 
 	public String toString() {
 		return "Adherent [ID=" + ID + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance=" + dateNaissance
-				+ ", dateCotisation=" + dateCotisation + ", mediaEnPossession=" + mediaEnPossession
-				+ ", listeMediaEmpruntes=" + listeMediaEmpruntes + "]";
+				+ ", dateCotisation=" + dateCotisation + ", listeMediaEmpruntes=" + listeMediaEmpruntes + "]";
 	}
 
 	public int calculAge() {

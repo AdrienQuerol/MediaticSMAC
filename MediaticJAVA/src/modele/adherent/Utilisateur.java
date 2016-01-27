@@ -1,14 +1,18 @@
 package modele.adherent;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
 public class Utilisateur extends Personne {
-	
+
 	public Utilisateur() {
 	}
-	
+
 	public Utilisateur(String nom, String prenom) {
 		super(nom, prenom);
 	}
-	
+
 	public Utilisateur(String nom, String prenom, String login, String motDePasse) {
 		super(nom, prenom);
 		this.login = login;
@@ -31,5 +35,6 @@ public class Utilisateur extends Personne {
 		this.motDePasse = motDePasse;
 	}
 
+	@Column
 	private String login, motDePasse;
 }

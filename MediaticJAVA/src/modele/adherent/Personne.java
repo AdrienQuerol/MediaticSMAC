@@ -1,6 +1,22 @@
 package modele.adherent;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class Personne {
+	
+	@Id
+	@GeneratedValue
+	protected Long ID;
+	
+	@Column
+	protected String nom, prenom;
 	
 	public Personne() {
 	}
@@ -39,6 +55,6 @@ public abstract class Personne {
 		this.prenom = prenom;
 	}
 
-	protected Long ID;
-	protected String nom, prenom;
+	
+
 }
