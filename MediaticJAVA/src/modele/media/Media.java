@@ -33,6 +33,7 @@ public abstract class Media {
 	private boolean emprunte;
 
 	public Media() {
+		emprunts = new ArrayList<Emprunt>();
 	}
 
 	public abstract String getType();

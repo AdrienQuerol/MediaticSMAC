@@ -35,6 +35,8 @@ public class Utilisateur extends Personne {
 		this.motDePasse = motDePasse;
 	}
 
+	@Column(unique=true)
+	private String login;
 	@Column
-	private String login, motDePasse;
+	private String motDePasse;
 }

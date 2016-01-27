@@ -1,7 +1,6 @@
 package dao;
 
 import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 
 public class DAO<T> {
 	
