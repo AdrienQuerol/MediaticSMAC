@@ -22,8 +22,8 @@ public class AdherentDAO extends DAO<Adherent> {
 					"a.nom LIKE CONCAT('%', CONCAT(:partieNom, '%'))\n" +
 				"ORDER BY :colonneTri " + (ordreTri != null ? ordreTri.toSQLString() : "ASC"),
 				Adherent.class);
-		requete.setParameter("debutIdent", debutIdent);
-		requete.setParameter("partieNom", partieNom);
+		requete.setParameter("debutIdent", debutIdent != null ? debutIdent : "");
+		requete.setParameter("partieNom",  partieNom  != null ? partieNom  : "");
 		requete.setParameter("colonneTri", colonneTri != null ? colonneTri : "nom, prenom");
 		List<Adherent> resultat = requete.getResultList();
 		em.close();
