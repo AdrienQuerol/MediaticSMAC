@@ -11,19 +11,19 @@ angular.module('app.media.nouv',[])
 
 			})
 	.controller('NouvMediaController',
-			function(serviceMediaGET,typeOptions,$rootScope,$location){
+			function(serviceMedia,typeOptions,$rootScope,$location){
 				var nouvmediaCtrl = this;
 		
 				$rootScope.pageTitle="Nouveau Media";
 				
 				nouvmediaCtrl.addMedia=function(){
-					serviceMediaGET.addMedia(nouvmediaCtrl.media);
+					serviceMedia.addMedia(nouvmediaCtrl.media);
 					console.log("ajouter");
-					$location="fiche_media.html";
+					$location.url("/fiche_media");
 				}
 		
 				nouvmediaCtrl.listmedia=function(){
-					return serviceMediaGET.getlistMedia();
+					return serviceMedia.getlistMedia();
 				}
 				
 				nouvmediaCtrl.listselect = typeOptions.list;

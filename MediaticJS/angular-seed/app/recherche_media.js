@@ -11,20 +11,20 @@ angular.module('app.media.rech',[])
 
 		})
 	.controller('RechMediaController',
-			function(serviceMediaGET,typeOptions,$rootScope){
+			function(serviceMedia,typeOptions,$rootScope){
 				var rechmediaCtrl = this;
 		
 				$rootScope.pageTitle="Recherche Media";
 		
 				rechmediaCtrl.listmedia=function(){
-					return serviceMediaGET.getlistMedia();
+					return serviceMedia.getlistMedia();
 				}
 				
 				rechmediaCtrl.listselect = typeOptions.list;
 				
 				
 				rechmediaCtrl.searchMedia=function(){
-					return serviceMediaGET.getSearchMedia(rechmediaCtrl.media);
+					return serviceMedia.getSearchMedia(rechmediaCtrl.media);
 				}
 		
 	})

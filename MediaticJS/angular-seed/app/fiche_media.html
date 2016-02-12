@@ -8,30 +8,30 @@
 						<label for="titre" class="col-md-4 control-label">Titre</label>
 						<div class="col-md-5 entree">
 							<input id="titre" name="titre" type="text" class="form-control"
-								required value="Mon titre" />
+								required value="Mon titre" ng-model="ficheMediaCtrl.formMedia.media.titre" />
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="auteur" class="col-md-4 control-label">Auteur</label>
 						<div class="col-md-5 entree">
-							<input id="auteur" name="auteur" type="text"
-								class="form-control" required value="Paul Dupont" />
+							<input id="auteur" name="auteur" type="text" class="form-control"
+								required value="Paul Dupont"
+								ng-model="ficheMediaCtrl.formMedia.media.auteur" />
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="type" class="col-md-4 control-label">Type</label>
 						<div class="col-md-5 entree">
-							<select id="type" name="type" class="form-control" required>
-								<option value="livre">Livre</option>
-								<option value="CD" selected>CD</option>
-								<option value="DVD">DVD</option>
+							<select id="type" name="type" class="form-control"
+								ng-model="ficheMediaCtrl.formMedia.media.type"
+								ng-options="item for item in ficheMediaCtrl.formMedia.typesMedia" required>
 							</select>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-md-5 col-md-offset-5 entree">
 							<input id="enregistrer" type="submit"
-								value="Enregistrer les modifications" class="btn btn-success" />
+								value="Enregistrer les modifications" class="btn btn-success" ng-click="ficheMediaCtrl.updateMedia()" />
 						</div>
 					</div>
 				</form>
