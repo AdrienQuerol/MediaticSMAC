@@ -1,0 +1,232 @@
+body.mediaticSMAC {
+	background-color: #F8F8F8 ;
+}
+
+/*  --------------- En tete --------------------  */
+.entete {
+	background-color: #383838 ;
+	height: 150px;
+	border-style: groove;
+}
+
+.menu{
+	right:20px;
+	top:105px;
+}
+
+
+.logo{
+	background-image: url("livre.gif");
+	height:140px;
+	width:120px;
+}
+
+.titentete{
+	color:white;
+	padding-top:20px;
+}
+
+.cheminDeFer2  {
+	position:relative;
+	top:10px;
+	height:30px;
+	width:230px;
+}
+
+.cheminDeFer3  {
+	position:relative;
+	top:10px;
+	height:30px;
+	width:450px;
+}
+
+.cheminDeFer4  {
+	position:relative;
+	top:10px;
+	height:30px;
+	width:560px;
+}
+
+
+/* ---------------- Barre de Recherche ------------------- */
+form div label.search{
+	
+	font-weight: bold; 
+	font-size: 130%;
+	font-style: solid;
+	margin-left: 20px;
+
+}
+
+div.search {
+	
+	padding: 18px;
+	border-radius : 10px;
+	background-color: steelBlue;
+	display: inline;
+	
+}
+
+.pos {
+	margin-left: 50px;
+	    
+}
+
+ form.search {
+    margin-top: 50px;
+    text-align: center;
+ }
+ 
+
+/* ---------------- Recherche ------------------- */
+
+.encadre{
+	margin:100px;
+	background-color: SteelBlue;
+	border-radius: 10px;
+	padding:20px;
+}
+
+				/*label */
+label:after {
+	content: ' : ';
+}
+
+
+
+
+/* ---------------- Creation ------------------- */
+
+.form-group.adresse {
+	margin-bottom: 2px;
+}
+
+.form-group.adresse input {
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+.form-group.adresse + .form-group input {
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+}
+
+
+.form-group.adresse + .form-group > .col-md-2 {
+	padding-right: 2px;
+}
+
+.form-group.adresse + .form-group > .col-md-2 > input {
+	border-bottom-right-radius: 0px;
+}
+
+.form-group.adresse + .form-group > .col-md-5 {
+	padding-left: 0px;
+}
+
+.form-group.adresse + .form-group > .col-md-5 > input {
+	border-bottom-left-radius: 0px;
+}
+
+.obligatoire label::before {
+	content: '* ';
+}
+
+
+/* ---------------- Resultat ------------------- */
+
+.table-striped>tbody>tr:nth-of-type(even) {
+    background-color: #ffffff;
+}
+
+.tableau th,td{
+	text-align:center;
+}
+
+th span.fleche_haut{
+    background: url("arrow_up.gif") right center no-repeat;
+    padding-right: 15px;
+     padding-top:15px;
+}
+
+th span.fleche_bas{
+    background: url("arrow_down.gif") right center no-repeat;
+    padding-right: 15px;
+   
+}
+
+.caret-inv {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-bottom: 4px dashed;
+    border-bottom: 4px solid\9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+.carets {
+	display: inline-block;
+	width:10px;
+	font-size:5px;
+}
+
+.pagination {
+	text-align:center;
+}
+
+/* ---------------- Fiche ------------------- */
+
+.encadre > section + section {
+	margin-top: 50px;
+}
+
+.champ_lecture_seule {
+	margin-top: 7px;
+}
+
+.champ_lecture_seule > span {
+	padding-left: 12px;
+}
+
+/* ---------------- Login ------------------- */
+
+.imgfondLog{
+	background-image: url("mediatheque1.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	height: 650px;
+}
+
+/*en-tete*/
+.enteteLogin {
+	background-color: #383838 ;
+	height: 300px;
+	border-style: groove;
+}
+
+.logoLog{
+	position:absolute;
+	background-image: url("livre.gif");
+	background-repeat: no-repeat;
+	height:364px;
+	width:393px;
+}
+
+.titLog{
+	color:white;
+	padding:100px;
+}
+
+/*connexion*/
+
+.encadreLog{
+	margin:100px;
+	border-radius: 10px;
+	padding:20px;
+	background-color: steelblue;
+/* 	opacity: 0.7; */
+}
+
