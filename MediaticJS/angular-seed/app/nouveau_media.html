@@ -1,0 +1,52 @@
+<div>
+	<h1>{{pageTitle}}</h1>
+	
+	<section class="contenu container-fluid">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 encadre">
+				<h1 class="text-center">Nouveau média</h1>
+				<form  method="get" class="form-horizontal">
+					<div class="form-group obligatoire">
+						<label for="titre" class="col-md-4 control-label">Titre</label>
+						<div class="col-md-5 entree">
+							<input id="titre" name="titre" type="text" class="form-control"
+								ng-model="nouvmediaCtrl.media.titre"  required />
+						</div>
+					</div>
+					<div class="form-group obligatoire">
+						<label for="auteur" class="col-md-4 control-label">Auteur</label>
+						<div class="col-md-5 entree">
+							<input id="auteur" name="auteur" type="text" class="form-control"
+							ng-model="nouvmediaCtrl.media.auteur"
+								required />
+						</div>
+					</div>
+					<div class="form-group obligatoire">
+						<label for="type" class="col-md-4 control-label">Type</label>
+						<div class="col-md-5 entree">
+							<select id="type" class="form-control"
+								ng-model="nouvmediaCtrl.media.type"
+								ng-options="item for item in nouvmediaCtrl.listselect">
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-5 col-md-offset-5 entree">
+							<input id="enregistrer" type="button" value="Enregistrer" ng-click="nouvmediaCtrl.addMedia()"
+								class="btn btn-success" />
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+	
+	
+				
+
+	{{nouvmediaCtrl.media}}
+
+
+
+
+</div>
