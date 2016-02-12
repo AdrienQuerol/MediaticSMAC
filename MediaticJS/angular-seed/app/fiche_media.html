@@ -3,7 +3,7 @@
 		<div class="col-md-6 col-md-offset-3 encadre">
 			<section>
 				<h1 class="text-center">Fiche média</h1>
-				<form class="form-horizontal">
+				<form ng-submit="ficheMediaCtrl.updateMedia()" class="form-horizontal">
 					<div class="form-group">
 						<label for="titre" class="col-md-4 control-label">Titre</label>
 						<div class="col-md-5 entree">
@@ -31,7 +31,7 @@
 					<div class="form-group">
 						<div class="col-md-5 col-md-offset-5 entree">
 							<input id="enregistrer" type="submit"
-								value="Enregistrer les modifications" class="btn btn-success" ng-click="ficheMediaCtrl.updateMedia()" />
+								value="Enregistrer les modifications" class="btn btn-success" />
 						</div>
 					</div>
 				</form>
