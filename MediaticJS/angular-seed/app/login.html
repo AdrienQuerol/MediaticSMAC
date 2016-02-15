@@ -1,0 +1,40 @@
+
+<div class="imgfondLog">
+	<section class="container-fluid">
+		<div class="row fondLog">
+			<div class="col-md-6 col-md-offset-3 encadreLog">
+
+				<h1 class="text-center ">Connexion</h1>
+
+				<form ng-submit="loginCtrl.authentification()" class="form-horizontal">
+
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="idLog">Identifiant</label>
+						<div class="col-md-5">
+							<input ng-model="loginCtrl.log.nom" type="text" class="form-control" name="idLog" id="idLog"
+								required />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="mdp">Mot de
+							passe</label>
+						<div class="col-md-5">
+							<input ng-model="loginCtrl.log.pass" type="password" class="form-control" name="mdp" id="mdp"
+								required />
+						</div>
+					</div>
+
+					<div class="col-md-5 col-md-offset-5">
+						<input class="btn btn-success" type="submit" id="connextion"
+							value="Se connecter" />
+					</div>
+
+				</form>
+			</div>
+		</div>
+
+	</section>
+</div>
+
+
