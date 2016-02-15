@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('app', [ 'ngRoute', 'ngSanitize', 'app.services.medias','app.media.nouv','app.media.rech' ])
+angular.module('app', [ 'ngRoute', 'ServiceAdherent','AdherentApp', 'ngSanitize', 'app.services.medias','app.media.nouv','app.media.rech', 'app.media.fiche' ])
 		.config(function($routeProvider,$httpProvider) {
 
 			$routeProvider.otherwise({
@@ -14,5 +14,4 @@ angular.module('app', [ 'ngRoute', 'ngSanitize', 'app.services.medias','app.medi
 		.controller('appContoller', function() {
 
 		});
-
 

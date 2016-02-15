@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module('app.services.medias',[])
-		.factory('serviceMediaGET',function($http){
+		.factory('serviceMedia',function($http){
 			
 			var urlgetrecherche="http://192.168.1.14:8080/resource/media.recherche";
 			var urlpostmodif="http://192.168.1.14:8080/resource/media.modification";
@@ -32,10 +32,10 @@ angular.module('app.services.medias',[])
 				
 				updateListMedia:function(media){
 					$http.post(urlpostmodif,media).success(function(data,status){
-						console.log(media);
+						console.log(data);
 					});
 					this.listmedia=null;
-					return getListMedia();
+					return this.getListMedia();
 					
 					
 				},
