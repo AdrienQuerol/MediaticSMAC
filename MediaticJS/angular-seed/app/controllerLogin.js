@@ -8,8 +8,8 @@ angular.module('LoginApp', [ 'ServiceLogin' ])
 	});
 })
 
-.controller('LoginController', function($window,servLogin) {
-	
+.controller('LoginController', function($window,servLogin,$rootScope) {
+	$rootScope.pageTitle = "Login";
 	ctrl = this;
 	
 	ctrl.authentification = function(){

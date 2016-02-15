@@ -4,17 +4,29 @@ angular.module('AdherentApp', [ 'ServiceAdherent' ])
 	$routeProvider.when('/nouveau_adherent', {
 		templateUrl : 'nouveau_adherent.html',
 		controller : 'AdherentController',
-		controllerAs : 'adherentCtrl'
+		controllerAs : 'adherentCtrl',
+		resolve: {
+			title:function(){
+				return "Nouveau Adherent";
+			}
+		} 
+
 	}),
 	$routeProvider.when('/recherche_adherent', {
 		templateUrl : 'recherche_adherent.html',
 		controller : 'AdherentController',
-		controllerAs : 'adherentCtrl'
+		controllerAs : 'adherentCtrl',
+		resolve: {
+			title:function(){
+				return "Recherche Adherent";
+			}
+		} 
 	});
 })
 
-.controller('AdherentController', function(servAdh) {
+.controller('AdherentController', function(servAdh,$rootScope,title) {
 
+	$rootScope.pageTitle = title;
 	var ctrl = this;
 	
 	ctrl.res = function(){
