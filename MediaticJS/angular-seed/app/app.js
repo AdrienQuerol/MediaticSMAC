@@ -14,7 +14,6 @@ angular
 				 'app.media.nouv',
 				 'app.media.rech',
 				 'app.media.fiche',
-                 'app.media.resultat',
 				 'app.services.medias',
 				 'app.services.emprunts'
 				 ]

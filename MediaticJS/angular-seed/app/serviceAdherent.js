@@ -39,4 +39,22 @@ angular.module('ServiceAdherent', [])
 		
 
 	};
+	
 })
+
+.provider(
+		'cartAdh', {
+			$get : function() {
+				var provider = this;
+				return {
+					motCle:{},
+					setMotCle : function(adherent) {
+						this.motCle = adherent;
+						}
+
+					}
+				}
+
+			
+			
+		})

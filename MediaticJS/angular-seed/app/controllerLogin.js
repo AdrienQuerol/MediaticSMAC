@@ -15,7 +15,7 @@ angular.module('LoginApp', [])
 	ctrl.authentification = function(){
 		servLogin.verifLogin(ctrl.log);
 		//redirection vers rechreche media (dépendra du retour de la requete)
-		$location.url('/recherche_media');
+		$location.url('/medias');
 	}
 
 });

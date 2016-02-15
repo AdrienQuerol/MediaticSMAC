@@ -1,0 +1,93 @@
+
+<!-- -------------------------- Barre de recherche------------ -------------------- -->
+
+<section class="container">
+	<form ng-submit="adherentCtrl.getSearchListResultat()" class="search form-inline"">
+		<div class="search">
+			<label class="search" for="Recherche">Recherche adhérent </label> 
+			<label class="search" for="id">Identifiant</label> <input ng-model="adherentCtrl.adherent.id" type="text"
+				class="form-control" id="identifiant"> 
+			<label class="search" for="autor">Nom</label> <input ng-model="adherentCtrl.adherent.nom" type="text" name="nom"
+				class="form-control" id="nom"> 
+			<input  class="pos btn btn-success" type="submit" id="rechercher" value="OK">
+
+		</div>
+	</form>
+</section>
+
+<section class="contenu container-fluid"></section>
+
+
+<!-- --------------- Contenu (tableau) -------------------- -->
+
+<section class="container-fluid">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 encadre">
+			<table class="table table-striped table-hover tableau">
+				<thead>
+					<tr>
+						<th>Identifiant
+							<div class="carets">
+								<span class="caret-inv"></span> <span class="caret"></span>
+							</div>
+						</th>
+						<th>Nom
+							<div class="carets">
+								<span class="caret-inv"></span> <span class="caret"></span>
+							</div>
+						</th>
+
+						<th>Prenom
+							<div class="carets">
+								<span class="caret-inv"></span> <span class="caret"></span>
+							</div>
+						</th>
+						<th>Date de naissance
+							<div class="carets">
+								<span class="caret-inv"></span> <span class="caret"></span>
+							</div>
+						</th>
+						<th>Cotisation
+							<div class="carets">
+								<span class="caret-inv"></span> <span class="caret"></span>
+							</div>
+						</th>
+						<th>Nombre de médias
+							<div class="carets">
+								<span class="caret-inv"></span> <span class="caret"></span>
+							</div>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat=" resAdh in adherentCtrl.getlistsearch() " ng-class="{encours : adherentCtrl.isLoaded==false }">
+						<td>{{resAdh.id}}</td>
+						<td>{{resAdh.nom}}</td>
+						<td>{{resAdh.prenom}}</td>
+						<td>{{resAdh.date_naissance}}</td>
+						<td>{{resAdh.cotisation_correcte}}</td>
+						<td>{{resAdh.nombre_media}}</td>
+						
+					</tr>
+				
+				</tbody>
+				<tfoot>
+
+				</tfoot>
+			</table>
+			<ul class="pagination pagination-sm">
+				<li><a href="" aria-label="Previous"> <span
+						aria-hidden="true">&laquo;</span>
+				</a></li>
+				<li><a href="">1</a></li>
+				<li><a href="">2</a></li>
+				<li><a href="">3</a></li>
+				<li><a href="">4</a></li>
+				<li><a href="">5</a></li>
+				<li><a href="" aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+				</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+

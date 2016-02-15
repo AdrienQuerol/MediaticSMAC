@@ -12,8 +12,8 @@ angular.module('AdherentApp', [ 'ServiceAdherent' ])
 		} 
 
 	}),
-	$routeProvider.when('/recherche_adherent', {
-		templateUrl : 'recherche_adherent.html',
+	$routeProvider.when('/adherents', {
+		templateUrl : 'adherents.html',
 		controller : 'AdherentController',
 		controllerAs : 'adherentCtrl',
 		resolve: {
@@ -24,10 +24,15 @@ angular.module('AdherentApp', [ 'ServiceAdherent' ])
 	});
 })
 
-.controller('AdherentController', function(servAdh,$rootScope,title) {
+.controller('AdherentController', function(servAdh,$rootScope,title,cartAdh) {
 
 	$rootScope.pageTitle = title;
 	var ctrl = this;
+	
+	var listSearchAdh=[];
+	ctrl.isLoaded=false;
+	ctrl.isPageRecherche = true;
+	ctrl.adherent=cartAdh.motCle;
 	
 	ctrl.res = function(){
 		servAdh.addAdherent();
@@ -39,6 +44,8 @@ angular.module('AdherentApp', [ 'ServiceAdherent' ])
 		})		
 	}
 	
+	
+	
 	ctrl.rech = function(){
 		servAdh.rechAdherent(ctrl.search);
 	}
@@ -46,5 +53,24 @@ angular.module('AdherentApp', [ 'ServiceAdherent' ])
 	ctrl.addAdh = function(){
 		servAdh.addAdherent(ctrl.add);
 	}
-
+	
+	ctrl.getlistsearch = function(){
+		return listSearchAdh;
+	};
+	
+	ctrl.getSearchListResultat=function(){
+		cartAdh.setMotCle(ctrl.adherent);
+		return servAdh.rechAdherent(ctrl.adherent).then(function(t){
+			listSearchAdh = t;
+			ctrl.isLoaded=true;
+		});
+	}
+	
+	ctrl.searchAdherent=function(){
+		ctrl.getSearchListResultat();
+		ctrl.isPageRecherche = false;
+	}
+	
+	
+	
 });
