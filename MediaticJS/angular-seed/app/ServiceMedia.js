@@ -10,6 +10,7 @@ angular.module('app.services.medias',[])
 			
 			return {
 				listmedia:null,
+				listsearch:[],
 				getListMedia: function(){
 					if(this.listmedia==null)
 						return  this.listmedia = $http.get(urlgetrecherche).then(function(response){
@@ -20,15 +21,18 @@ angular.module('app.services.medias',[])
 				},
 				getSearchMedia: function(searchMedia){
 					console.log(searchMedia);
-					var listsearch=$http.get(urlgetrecherche,{params:{titre:searchMedia.titre,auteur:searchMedia.auteur,type:searchMedia.type}})
+				
+					this.listsearch=$http.get(urlgetrecherche,{params:{titre:searchMedia.titre,auteur:searchMedia.auteur,type:searchMedia.type}})
 											.then(function(response){
 												return response.data;
 											});
-					listsearch.then(function(value){
-						console.log(value);
-					});
-					return listsearch;
+
+					return this.listsearch.then(function(value){
+						return value;
+					})
 				},
+				
+				
 				
 				updateListMedia:function(media){
 					$http.post(urlpostmodif,media).success(function(data,status){
@@ -40,7 +44,7 @@ angular.module('app.services.medias',[])
 					
 				},
 				
-				
+				  
 				addMedia: function(media){
 					var mediamodif;
 					console.log(media);

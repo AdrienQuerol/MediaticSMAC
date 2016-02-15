@@ -177,6 +177,10 @@ th span.fleche_bas{
 	text-align:center;
 }
 
+.encours{
+	 visibility:hidden;
+}
+
 /* ---------------- Fiche ------------------- */
 
 .encadre > section + section {

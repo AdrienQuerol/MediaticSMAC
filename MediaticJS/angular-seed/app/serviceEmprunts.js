@@ -72,6 +72,15 @@
 									);
 						}
 						
+						ListeEmprunts.prototype.DernierEmpruntDuMedia = function (media) {
+						
+							return this.rechercherParMedia(media).then(
+									function (data){ 
+										return data[0];
+										}
+									);
+						}
+						
 						return new ListeEmprunts();				
 					}
 			);
