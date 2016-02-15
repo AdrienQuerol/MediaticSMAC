@@ -34,7 +34,8 @@
 						
 						ListeEmprunts.prototype.ajouterEmprunt = function (media, adherent, dateEmprunt, dateRetour) {
 							var emprunt = new Emprunt(media, adherent, dateEmprunt, dateRetour);
-							return $http
+							return
+								$http
 								.post(this.urlAjoutEmprunt, emprunt)
 								.then(
 										function (reponse) {
@@ -44,7 +45,8 @@
 						}
 						
 						ListeEmprunts.prototype.rechercherParAdherent = function (adh) {	
-							return $http
+							return
+									$http
 									.get(this.urlGetAdherent, {params: {id: adh.id}})
 									.then(
 											function (reponse) {
@@ -59,18 +61,25 @@
 						
 						ListeEmprunts.prototype.rechercherParMedia = function (media) {
 							
-							return $http
+							return
+									$http
 									.get(this.urlGetMedia, {params: {id: media.id}})
 									.then(
 											function (reponse) {
-												return reponse.data.emprunteurs.map(
+												var emprunteurs = reponse.data.emprunteurs;//? reponse.data.emprunteurs : [];
+												return emprunteurs.map(
 														function (emprunteur) {
-															return new Emprunt(emprunteur.adherent, media, emprunteur.depart, emprunteur.retour);
+															return new Emprunt(
+																	emprunteur.adherent,
+																	media,
+																	emprunteur.depart,
+																	emprunteur.retour
+															);
 														}
-												)
+												);
 											}
 									);
-						}
+						};
 						
 						ListeEmprunts.prototype.DernierEmpruntDuMedia = function (media) {
 						
@@ -79,9 +88,9 @@
 										return data[0];
 										}
 									);
-						}
-						
-						return new ListeEmprunts();				
+						};
+
+						return new ListeEmprunts();
 					}
 			);
 })();
