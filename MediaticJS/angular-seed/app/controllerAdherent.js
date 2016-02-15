@@ -1,8 +1,13 @@
 angular.module('AdherentApp', [ 'ServiceAdherent' ])
 
 .config(function($routeProvider) {
-	$routeProvider.when('/adherent', {
+	$routeProvider.when('/nouveau_adherent', {
 		templateUrl : 'nouveau_adherent.html',
+		controller : 'AdherentController',
+		controllerAs : 'adherentCtrl'
+	}),
+	$routeProvider.when('/recherche_adherent', {
+		templateUrl : 'recherche_adherent.html',
 		controller : 'AdherentController',
 		controllerAs : 'adherentCtrl'
 	});
@@ -13,7 +18,6 @@ angular.module('AdherentApp', [ 'ServiceAdherent' ])
 	var ctrl = this;
 	
 	ctrl.res = function(){
-		console.log('azaaaaz');
 		servAdh.addAdherent();
 	}
 	
