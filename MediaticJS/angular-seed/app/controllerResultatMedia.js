@@ -1,41 +1,51 @@
 "use strict";
 
-angular.module('app.media.resultat',[])
+angular.module('app.media.rech',[])
 	.config(function($routeProvider,$httpProvider) {
 
 			$routeProvider.when('/resultat_media', {
-				templateUrl : 'resultat_media.html',
-				controller : 'ResMediaController',
-				controllerAs : 'resmediaCtrl'
+				templateUrl : 'medias.html',
+				controller : 'RechMediaController',
+				controllerAs : 'rechmediaCtrl'
 			});
 
 			})
-	.controller('ResMediaController',
-			function(serviceMedia,typeOptions,$rootScope,serviceEmprunts){
-				var resmediaCtrl = this;
+	.controller('RechMediaController',
+			function(serviceMedia,typeOptions,$rootScope,serviceEmprunts,cartMedia){
+				var rechmediaCtrl = this;
 		
-				$rootScope.pageTitle="Resultat Media";
+				$rootScope.pageTitle="Recherche Media";
 				
 				
-				resmediaCtrl.listselect = typeOptions.list;
+				rechmediaCtrl.listselect = typeOptions.list;
 				
 				// recuperation du tableau media 
 				var listSearchMedia=[];
-				resmediaCtrl.isLoadedMedia=false;
+				rechmediaCtrl.isLoadedMedia=false;
 				
-				resmediaCtrl.getlistsearch = function(){
+				rechmediaCtrl.isPageRecherche = true;
+				
+				rechmediaCtrl.getlistsearch = function(){
 					return listSearchMedia;
 				};
 				
-				resmediaCtrl.media={};
+				rechmediaCtrl.media=cartMedia.motCle;
 				
 				
-				resmediaCtrl.searchMedia=function(){
-					return serviceMedia.getSearchMedia(resmediaCtrl.media).then(function(t){
+				rechmediaCtrl.getSearchListResultat=function(){
+					cartMedia.setMotCle(rechmediaCtrl.media);
+					return serviceMedia.getSearchMedia(rechmediaCtrl.media).then(function(t){s
 						listSearchMedia = t;
-						resmediaCtrl.isLoadedMedia=true;
+						rechmediaCtrl.isLoadedMedia=true;
 					});
 				}
 
+				
+		
+				
+				rechmediaCtrl.searchMedia=function(){
+					rechmediaCtrl.getSearchListResultat();
+					rechmediaCtrl.isPageRecherche = false;
+				}
 				
 	})

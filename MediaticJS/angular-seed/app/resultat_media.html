@@ -1,22 +1,22 @@
 <!-- -------------------------- Barre de recherche------------ -------------------- -->
 	<section class="container">
-		<form  ng-submit="resmediaCtrl.searchMedia()" class="search form-inline">
+		<form  ng-submit="rechmediaCtrl.getSearchListResultat()" class="search form-inline">
 			<div class="search">
 				<label class="search" for="Recherche">Recherche m&eacutedia
 				</label>
 				
 				
 				 <label class="search" for="title">Titre</label> <input type="text"
-					name="title" class="form-control" id="title" ng-model="resmediaCtrl.media.titre"> 
+					name="title" class="form-control" id="title" ng-model="rechmediaCtrl.media.titre"> 
 					
 					
 					<label class="search" for="autor">Auteur</label>
-				<input type="text" name="autor" class="form-control" id="autor" ng-model="resmediaCtrl.media.auteur"> 
+				<input type="text" name="autor" class="form-control" id="autor" ng-model="rechmediaCtrl.media.auteur"> 
 				
 				<label class="search" for="type"> Type </label> 
 				<select id="type" class="form-control"
-								ng-model="resmediaCtrl.media.type"
-								ng-options="item for item in resmediaCtrl.listselect">
+								ng-model="rechmediaCtrl.media.type"
+								ng-options="item for item in rechmediaCtrl.listselect">
 				</select>
 
 				<input  class="pos btn btn-success" type="submit" id="rechercher" value="OK">
@@ -26,9 +26,9 @@
 		</form>
 	</section>
 	
-	{{resmediaCtrl.media}}
+	{{rechmediaCtrl.media}}
 	
-	{{resmediaCtrl.listSearch}}
+	{{rechmediaCtrl.listSearch}}
 	
 <!-- --------------- Contenu (formulaires,résultats,connexion) -------------------- -->
 
@@ -68,7 +68,7 @@
 						</tr>
 					</thead>
 					<tbody >
-						<tr ng-repeat=" resMedia in resmediaCtrl.getlistsearch() " ng-class="{encours : resmediaCtrl.isLoadedMedia==false }">
+						<tr ng-repeat=" resMedia in rechmediaCtrl.getlistsearch() " ng-class="{encours : rechmediaCtrl.isLoadedMedia==false }">
 							<td>{{resMedia.titre}}</td>
 							<td>{{resMedia.auteur}}</td>
 							<td>{{resMedia.type}}</td>

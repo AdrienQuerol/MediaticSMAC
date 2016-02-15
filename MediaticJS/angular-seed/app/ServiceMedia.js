@@ -71,7 +71,22 @@ angular.module('app.services.medias',[])
 	})
 	
 	
-	
+	.provider(
+		'cartMedia', {
+			$get : function() {
+				var provider = this;
+				return {
+					motCle:{},
+					setMotCle : function(media) {
+						this.motCle = media;
+						}
+
+					}
+				}
+
+			
+			
+		})
 	
 	
 	

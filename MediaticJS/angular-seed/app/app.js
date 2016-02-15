@@ -1,7 +1,7 @@
 "use strict";
 
 
-angular.module('app', [ 'ngRoute', 'ServiceAdherent','AdherentApp', 'ngSanitize', 'app.services.medias','app.media.nouv','app.media.rech', 'app.media.fiche','app.adherent.fiche', 'app.media.resultat','app.services.emprunts','ServiceLogin', 'LoginApp' ])
+angular.module('app', [ 'ngRoute', 'ServiceAdherent','AdherentApp', 'ngSanitize', 'app.services.medias','app.media.nouv','app.media.rech', 'app.media.fiche','app.adherent.fiche','app.services.emprunts','ServiceLogin', 'LoginApp' ])
 
 		.config(function($routeProvider,$httpProvider) {
 

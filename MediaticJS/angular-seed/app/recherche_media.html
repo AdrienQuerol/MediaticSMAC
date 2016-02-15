@@ -1,11 +1,9 @@
-<h1>hello</h1>
-
 <section class="container-fluid">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3 encadre">
 				<h1 class="text-center">Recherche d'un m&eacute;dia</h1>
 
-				<form class="form-horizontal">
+				<form ng-submit="rechmediaCtrl.searchMedia()" class="form-horizontal">
 
 					<div class="form-group">
 						<label class="col-md-4 control-label" for="titleM">Titre
@@ -37,7 +35,7 @@
 
 					<div class="col-md-5 col-md-offset-5">
 						<input id="recherche"
-							class="btn btn-success" type="button"  ng-click="rechmediaCtrl.searchMedia()" value="Rechercher">
+							class="btn btn-success" type="submit"   value="Rechercher">
 					</div>
 
 				</form>

@@ -1,4 +1,4 @@
-angular.module('LoginApp', [ 'ServiceLogin' ])
+angular.module('LoginApp', [])
 
 .config(function($routeProvider) {
 	$routeProvider.when('/login', {
@@ -8,14 +8,14 @@ angular.module('LoginApp', [ 'ServiceLogin' ])
 	});
 })
 
-.controller('LoginController', function($window,servLogin,$rootScope) {
+.controller('LoginController', function($location,servLogin,$rootScope) {
 	$rootScope.pageTitle = "Login";
 	ctrl = this;
 	
 	ctrl.authentification = function(){
 		servLogin.verifLogin(ctrl.log);
 		//redirection vers rechreche media (dépendra du retour de la requete)
-		$window.location.href = '#/recherche_media';
+		$location.url('/recherche_media');
 	}
 
 });
