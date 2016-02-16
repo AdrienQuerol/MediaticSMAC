@@ -42,6 +42,15 @@ angular.module('ServiceAdherent', [])
 			
 		},
 		
+		rechTexteAdherent: function(texte) {
+			return $http
+					.get(urlrech, {params: {texte: texte.texte}})
+					.then(
+							function (reponse) {
+								return reponse.data;
+							}
+					);
+		},
 		getAdherent: function(idAdh){			
 			var adherentPromise = $http
 					.get(urlgetaccession, {params: {id: idAdh}})

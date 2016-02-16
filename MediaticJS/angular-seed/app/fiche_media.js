@@ -76,8 +76,8 @@
 							ficheMediaCtrl.formEmprunt.listeAdherents.clic = true;
 						};
 
-						function rechercherAdherent (nom) {
-							if (angular.isUndefined(nom))
+						function rechercherAdherent (texte) {
+							if (angular.isUndefined(texte))
 								return;
 
 							// Si la fonction de rappel a été appelée sur la mise à jour liée au clic,
@@ -90,10 +90,10 @@
 							ficheMediaCtrl.formEmprunt.adherentSelectionne = null;
 
 							return servAdh
-									.rechAdherent({nom: nom})
+									.rechTexteAdherent({texte: texte})
 									.then(
 											function (resultat) {
-												ficheMediaCtrl.formEmprunt.listeAdherents.adherents = resultat;
+												ficheMediaCtrl.formEmprunt.listeAdherents.adherents = resultat.slice(0, 5);
 												ficheMediaCtrl.formEmprunt.listeAdherents.affiche = resultat.length != 0;
 												return resultat;
 											}
