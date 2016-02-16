@@ -19,7 +19,7 @@
 			)
 			.controller(
 					'ficheMediaController',
-					function ($routeParams, $scope, serviceEmprunts, serviceMedia, typeOptions) {
+					function ($routeParams, $scope, $location, serviceEmprunts, serviceMedia, typeOptions) {
 						var mediaCourant;
 						var ficheMediaCtrl = this; 
 
@@ -64,6 +64,10 @@
 											}
 									);
 						};
+
+						ficheMediaCtrl.ouvrirFicheAdherent = function (adherent) {
+							 $location.url("/fiche_adherent/" + adherent.id);
+						}
 
 						function mettreAJourEmprunts(media) {
 							ficheMediaCtrl.empruntsCharges = false;

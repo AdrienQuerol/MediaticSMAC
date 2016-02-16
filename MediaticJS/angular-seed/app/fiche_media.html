@@ -85,7 +85,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat="emprunt in ficheMediaCtrl.listeEmprunts">
+							<tr ng-repeat="emprunt in ficheMediaCtrl.listeEmprunts" ng-click="ficheMediaCtrl.ouvrirFicheAdherent(emprunt.adherent)">
 								<td>{{emprunt.adherent.id}}</td>
 								<td>{{emprunt.adherent.nom}}</td>
 								<td>{{emprunt.adherent.prenom}}</td>
