@@ -20,7 +20,8 @@
 			.controller(
 					'ficheMediaController',
 					function ($routeParams, $scope, serviceEmprunts, serviceMedia, typeOptions) {
-						var ficheMediaCtrl = this;
+						var mediaCourant;
+						var ficheMediaCtrl = this; 
 
 						var promesseMediaCourant = serviceMedia.getMedia($routeParams.idMedia);
 
@@ -30,7 +31,7 @@
 
 						ficheMediaCtrl.listeEmprunts = [];
 
-						ficheMediaCtrl.formMedia = {};
+						ficheMediaCtrl.formMedia = { media: {} };
 						ficheMediaCtrl.formMedia.typesMedia = typeOptions.list;
 
 						ficheMediaCtrl.formEmprunt = {};
@@ -80,7 +81,12 @@
 							promesseMedia
 									.then(
 											function (media) {
-												ficheMediaCtrl.mediaCourant = media; 
+//												ficheMediaCtrl.mediaCourant = media;
+												mediaCourant = media;
+												ficheMediaCtrl.formMedia.media.titre  = mediaCourant.titre;
+												ficheMediaCtrl.formMedia.media.auteur = mediaCourant.auteur;
+												ficheMediaCtrl.formMedia.media.type   = mediaCourant.type;
+
 												mettreAJourEmprunts(media);
 											}
 									);
