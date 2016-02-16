@@ -213,6 +213,16 @@ th span.fleche_bas{
 	display: inherit;
 }
 
+#listeAdherents {
+	display: none;
+	position: relative;
+	zindex: 100;
+}
+
+#listeAdherents.affiche {
+	display: inherit;
+}
+
 /* ---------------- Login ------------------- */
 
 .imgfondLog{

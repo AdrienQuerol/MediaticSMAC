@@ -45,6 +45,15 @@
 							<input type="text" class="form-control" name="nomAdhe"
 								id="nomAdhe" ng-model="ficheMediaCtrl.formEmprunt.adherent"/>
 						</div>
+						<div id="listeAdherents" ng-class="{affiche: ficheMediaCtrl.formEmprunt.listeAdherents.affiche}">
+							<table class="table table-striped table-hover tableau">
+								<tr	ng-repeat="adherent in ficheMediaCtrl.formEmprunt.listeAdherents.adherents" ng-click="ficheMediaCtrl.selectionnerAdherent(adherent)">
+									<td>{{adherent.nom}}</td>
+									<td>{{adherent.prenom}}</td>
+									<td>né le {{adherent.date_naissance }}</td>
+								</tr>
+							</table>
+						</div>
 					</div>
 					<div class="form-group obligatoire">
 						<label class="col-md-4 control-label" for="date_emprunt">Date</label>
@@ -85,7 +94,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat="emprunt in ficheMediaCtrl.listeEmprunts">
+							<tr ng-repeat="emprunt in ficheMediaCtrl.listeEmprunts" ng-click="ficheMediaCtrl.ouvrirFicheAdherent(emprunt.adherent)">
 								<td>{{emprunt.adherent.id}}</td>
 								<td>{{emprunt.adherent.nom}}</td>
 								<td>{{emprunt.adherent.prenom}}</td>

@@ -19,7 +19,9 @@
 			)
 			.controller(
 					'ficheMediaController',
-					function ($rootScope,$routeParams, $scope, serviceEmprunts, serviceMedia, typeOptions) {
+
+					function ($rootScope, $routeParams, $scope, $location, serviceEmprunts, serviceMedia, typeOptions, servAdh) {
+
 						var mediaCourant;
 						var ficheMediaCtrl = this; 
 						$rootScope.pageTitle="Fiche Media";
@@ -34,7 +36,7 @@
 						ficheMediaCtrl.formMedia = { media: {} };
 						ficheMediaCtrl.formMedia.typesMedia = typeOptions.list;
 
-						ficheMediaCtrl.formEmprunt = {};
+						ficheMediaCtrl.formEmprunt = { listeAdherents: {} };
 
 						ficheMediaCtrl.enregistrerMedia = function () {
 							gererMAJMedia(
@@ -49,7 +51,7 @@
 												var promesseNouvelEmprunt =
 														serviceEmprunts
 																.ajouterEmprunt(
-																		ficheMediaCtrl.formEmprunt.adherent,
+																		ficheMediaCtrl.formEmprunt.adherentSelectionne,
 																		media,
 																		ficheMediaCtrl.formEmprunt.date
 																);
@@ -61,6 +63,41 @@
 																		}
 																);
 												return gererMAJMedia(promesseNouveauMedia);
+											}
+									);
+						};
+
+						ficheMediaCtrl.ouvrirFicheAdherent = function (adherent) {
+							 $location.url("/fiche_adherent/" + adherent.id);
+						};
+
+						ficheMediaCtrl.selectionnerAdherent = function (adherent) {
+							ficheMediaCtrl.formEmprunt.adherentSelectionne = adherent;
+							ficheMediaCtrl.formEmprunt.adherent = angular.uppercase(adherent.nom) + ' ' + adherent.prenom;
+							ficheMediaCtrl.formEmprunt.listeAdherents.affiche = false;
+							ficheMediaCtrl.formEmprunt.listeAdherents.clic = true;
+						};
+
+						function rechercherAdherent (texte) {
+							if (angular.isUndefined(texte))
+								return;
+
+							// Si la fonction de rappel a été appelée sur la mise à jour liée au clic,
+							// et non sur une entrée au clavier, on annule la recherche
+							if (ficheMediaCtrl.formEmprunt.listeAdherents.clic) {
+								ficheMediaCtrl.formEmprunt.listeAdherents.clic = false;
+								return;
+							}
+
+							ficheMediaCtrl.formEmprunt.adherentSelectionne = null;
+
+							return servAdh
+									.rechTexteAdherent({texte: texte})
+									.then(
+											function (resultat) {
+												ficheMediaCtrl.formEmprunt.listeAdherents.adherents = resultat.slice(0, 5);
+												ficheMediaCtrl.formEmprunt.listeAdherents.affiche = resultat.length != 0;
+												return resultat;
 											}
 									);
 						};
@@ -93,6 +130,13 @@
 									);
 							return promesseMedia;
 						}
+
+						$scope.$watch(
+								'ficheMediaCtrl.formEmprunt.adherent',
+								function (nouvelleValeur) {
+									rechercherAdherent(nouvelleValeur);
+								}
+						);
 					}
 			);
 })();
