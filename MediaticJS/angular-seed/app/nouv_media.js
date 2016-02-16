@@ -19,7 +19,9 @@ angular.module('app.media.nouv',[])
 				nouvmediaCtrl.addMedia=function(){
 					serviceMedia.addMedia(nouvmediaCtrl.media);
 					console.log("ajouter");
-					$location.url("/fiche_media");
+					nouvmediaCtrl.media = {};
+					// A MODIF POUR REDIRIGER VERS LA FICHE DU MEDIA AJOUTE
+					//$location.url("/fiche_media/:nouvmediaCtrl.media.id");
 				}
 		
 				nouvmediaCtrl.listmedia=function(){

@@ -32,7 +32,7 @@ angular.module('AdherentApp', [ 'ServiceAdherent' ])
 	var listSearchAdh=[];
 	ctrl.isLoaded=false;
 	ctrl.isPageRecherche = true;
-	ctrl.adherent=cartAdh.motCle;
+	ctrl.search=cartAdh.motCle;
 	
 	ctrl.res = function(){
 		servAdh.addAdherent();
@@ -49,6 +49,9 @@ angular.module('AdherentApp', [ 'ServiceAdherent' ])
 //	ctrl.rech = function(){
 //		servAdh.rechAdherent(ctrl.adherent);
 //	}
+	
+	
+	
 	
 	ctrl.addAdh = function(){
 		servAdh.addAdherent(ctrl.add);
@@ -77,9 +80,15 @@ angular.module('AdherentApp', [ 'ServiceAdherent' ])
 	}
 	
 	ctrl.getFiche= function(adh){
+		
 		$location.url("/fiche_adherent/"+adh.id);
 	}
 	
+	
+
+	if(angular.isDefined(ctrl.search.nom) || angular.isDefined(ctrl.search.id)){
+		ctrl.searchAdherent();
+	}
 	
 	
 });

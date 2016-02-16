@@ -20,7 +20,7 @@
 			.controller(
 					'ficheAdherentController',
 					 function (servAdh,$routeParams) {
-						console.log("salut");
+						
 						var ficheAdherentCtrl = this;
 						//var promesseAdhCourant = servAdh.getAdherent($routeParams.idAdh);
 						//console.log(promesseAdhCourant);
@@ -40,7 +40,7 @@
 						
 						servAdh.getAdherent($routeParams.idAdh).then(function(t){
 							ficheAdherentCtrl.formAdherent.adherent=t;
-								console.log(t);
+								//console.log(t);
 						});
 
 							

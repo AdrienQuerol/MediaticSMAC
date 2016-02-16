@@ -13,15 +13,17 @@ angular.module('ServiceAdherent', [])
 	return {
 		rows : [],
 		addAdherent : function(adherent) {			
-			$http.post(urlcrea, {params:{nom:adherent.nom, id:adherent.id}}).then(function(response) {});
-			return this.getList();			
+			return $http.post(urlcrea, adherent).then(function(response) {});
+						
 		},
 		
 		modifAdherent : function(adherent) {	
 			var adh = angular.copy(adherent);
 			adh.date_naissance = $filter('date')(adh.date_naissance, "MM-dd-yyyy HH:mm:ss.sss");
-			adh.cotisation.debut = $filter('date')(adh.cotisation.debut, "MM-dd-yyyy HH:mm:ss.sss");
-			adh.cotisation.fin = $filter('date')(adh.cotisation.fin, "MM-dd-yyyy HH:mm:ss.sss");
+			if(adh.cotisation_correcte){
+				adh.cotisation.debut = $filter('date')(adh.cotisation.debut, "MM-dd-yyyy HH:mm:ss.sss");
+				adh.cotisation.fin = $filter('date')(adh.cotisation.fin, "MM-dd-yyyy HH:mm:ss.sss");
+			}
 			$http.post(urlmodif,adh).then(function(response) {});
 			return this.getList();			
 		},
@@ -45,9 +47,10 @@ angular.module('ServiceAdherent', [])
 					.get(urlgetaccession, {params: {id: idAdh}})
 					.then(function(response){
 						response.data.date_naissance = new Date(response.data.date_naissance);
-						response.data.cotisation.debut = new Date(response.data.cotisation.debut);
-						response.data.cotisation.fin = new Date(response.data.cotisation.fin);
-						
+						if(response.data.cotisation_correcte){
+							response.data.cotisation.debut = new Date(response.data.cotisation.debut);
+							response.data.cotisation.fin = new Date(response.data.cotisation.fin);
+						}
 						return response.data;
 						
 					
