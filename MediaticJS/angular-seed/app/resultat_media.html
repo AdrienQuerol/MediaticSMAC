@@ -68,7 +68,7 @@
 						</tr>
 					</thead>
 					<tbody >
-						<tr ng-repeat=" resMedia in rechmediaCtrl.getlistsearch() " ng-class="{encours : rechmediaCtrl.isLoadedMedia==false }">
+						<tr ng-click="rechmediaCtrl.getFiche(resMedia)" ng-repeat=" resMedia in rechmediaCtrl.getlistsearch() " ng-class="{encours : rechmediaCtrl.isLoadedMedia==false }">
 							<td>{{resMedia.titre}}</td>
 							<td>{{resMedia.auteur}}</td>
 							<td>{{resMedia.type}}</td>

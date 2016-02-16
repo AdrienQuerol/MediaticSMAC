@@ -19,10 +19,10 @@
 			)
 			.controller(
 					'ficheMediaController',
-					function ($routeParams, $scope, serviceEmprunts, serviceMedia, typeOptions) {
+					function ($rootScope,$routeParams, $scope, serviceEmprunts, serviceMedia, typeOptions) {
 						var mediaCourant;
 						var ficheMediaCtrl = this; 
-
+						$rootScope.pageTitle="Fiche Media";
 						var promesseMediaCourant = serviceMedia.getMedia($routeParams.idMedia);
 
 						ficheMediaCtrl.empruntsCharges = false;

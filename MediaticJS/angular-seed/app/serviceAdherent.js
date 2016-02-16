@@ -9,6 +9,7 @@ angular.module('ServiceAdherent', [])
 	var urlmodif = 'http://192.168.1.14:8080/resource/adherent.modification';
 	var urlgetaccession="http://192.168.1.14:8080/resource/adherent.accession";
 	var urlcrea = 'http://192.168.1.14:8080/resource/adherent.creation';
+	var urlgetpage = 'http://192.168.1.14:8080/resource/adherent.recherche.taille';
 	
 	return {
 		rows : [],
@@ -34,12 +35,20 @@ angular.module('ServiceAdherent', [])
 				return response.data;
 			});
 		},
-		rechAdherent : function(adherent) {
-			return $http.get(urlrech, {params:{nom:adherent.nom, id:adherent.id}}).then(function(response) {
+		rechAdherent : function(adherent,pageid) {
+			return $http.get(urlrech, {params:{nom:adherent.nom, id:adherent.id, page:pageid}}).then(function(response) {
 				console.log("serv");
 				return response.data;
 			});
 			
+		},
+		
+		getMaxPage : function(search){
+			console.log(search);
+			return $http.get(urlgetpage,{params:{nom:search.nom, id:search.id}}).then(function(response) {
+				console.log(response.data);
+				return response.data;
+			});
 		},
 		
 		getAdherent: function(idAdh){			

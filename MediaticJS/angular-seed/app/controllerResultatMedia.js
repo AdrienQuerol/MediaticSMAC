@@ -11,7 +11,7 @@ angular.module('app.media.rech',[])
 
 			})
 	.controller('RechMediaController',
-			function(serviceMedia,typeOptions,$rootScope,serviceEmprunts,cartMedia){
+			function(serviceMedia,typeOptions,$rootScope,serviceEmprunts,cartMedia,$location){
 				var rechmediaCtrl = this;
 				var listSearchMedia=[];
 				rechmediaCtrl.isLoadedMedia=false;
@@ -46,4 +46,12 @@ angular.module('app.media.rech',[])
 					rechmediaCtrl.isPageRecherche = false;
 				}
 				
+				rechmediaCtrl.getFiche= function(resMedia){
+					$location.url("/fiche_media/"+resMedia.id);
+				}
+				
+				if(angular.isDefined(rechmediaCtrl.media.titre) || angular.isDefined(rechmediaCtrl.media.auteur)
+						|| angular.isDefined(rechmediaCtrl.media.type)){
+					rechmediaCtrl.searchMedia();
+				}
 	})

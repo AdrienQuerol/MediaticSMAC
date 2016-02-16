@@ -22,7 +22,8 @@
 <script src="controllerFicheAdherent.js"></script>
 <script src="app.js"></script>
 
-<link rel="stylesheet" type="text/css" href="font-awesome-4.5.0/css/font-awesome.css" />
+<link rel="stylesheet" type="text/css"
+	href="font-awesome-4.5.0/css/font-awesome.css" />
 <link rel="stylesheet" type="text/css" href="mystyle.css" />
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <script
@@ -32,7 +33,7 @@
 
 </head>
 
-<header class="entete container-fluid">
+<header ng-if="pageTitle!='Login'" class="entete container-fluid">
 	<section class="row">
 		<div class="logo col-md-2"></div>
 		<h1 class="col-md-4 col-md-offset-2 titentete text-center">
@@ -62,15 +63,17 @@
 				role="button">Déconnexion</a>
 		</div>
 	</section>
-	A MODIF
-	<ol class="cheminDeFer4 breadcrumb">
-		<li><a href="#/login">Accueil</a></li>
-		<li><a href="#/adherents">Recherche Adhérent</a></li>
-		<li><a href="#/adherents">Résultat Recherche
-				Adhérent</a></li>
-		<li class="active">Fiche Adhérent</li>
-	</ol>
 </header>
+
+<header ng-if="pageTitle=='Login'" class="container-fluid">
+
+	<section class="row enteteLogin">
+		<div class="logoLog"></div>
+		<h1 class="col-md-4 col-md-offset-4 titLog text-center">
+			M&eacute;diath&egrave;que SMAC</h1>
+	</section>
+</header>
+<ng-include src="'chemin_de_fer.html'" ></ng-include>
 
 <body>
 	<div ng-controller="appContoller">

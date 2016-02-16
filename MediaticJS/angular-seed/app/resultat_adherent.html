@@ -4,7 +4,7 @@
 <section class="container">
 	<form ng-submit="adherentCtrl.getSearchListResultat()" class="search form-inline"">
 		<div class="search">
-			<label class="search" for="Recherche">Recherche adhérent </label> 
+			<label class="search" for="Recherche">Recherche adh&eacute;rent </label> 
 			<label class="search" for="id">Identifiant</label> <input ng-model="adherentCtrl.search.id" type="text"
 				class="form-control" id="identifiant"> 
 			<label class="search" for="autor">Nom</label> <input ng-model="adherentCtrl.search.nom" type="text" name="nom"
@@ -37,7 +37,7 @@
 							</div>
 						</th>
 
-						<th>Prenom
+						<th>Pr&eacute;nom
 							<div class="carets">
 								<span class="caret-inv"></span> <span class="caret"></span>
 							</div>
@@ -52,7 +52,7 @@
 								<span class="caret-inv"></span> <span class="caret"></span>
 							</div>
 						</th>
-						<th>Nombre de médias
+						<th>Nombre de m&eacute;dias
 							<div class="carets">
 								<span class="caret-inv"></span> <span class="caret"></span>
 							</div>
@@ -75,21 +75,16 @@
 
 				</tfoot>
 			</table>
-			<ul class="pagination pagination-sm">
-				<li><a href="" aria-label="Previous"> <span
-						aria-hidden="true">&laquo;</span>
-				</a></li>
-				<li><a href="">1</a></li>
-				<li><a href="">2</a></li>
-				<li><a href="">3</a></li>
-				<li><a href="">4</a></li>
-				<li><a href="">5</a></li>
-				<li><a href="" aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-				</a></li>
+			<ul class="pagination pagination-sm" >
+								
+					  <li><a  ng-click="adherentCtrl.setPage(nb)" ng-repeat="nb in adherentCtrl.getPage()  ">{{nb+1}}</a></li>
+					 
+
 			</ul>
+			
 		</div>
 	</div>
 </section>
 
-{{adherentCtrl.getlistsearch()}}
+{{ adherentCtrl.listPage}}
 

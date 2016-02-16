@@ -19,7 +19,8 @@
 			)
 			.controller(
 					'ficheAdherentController',
-					 function (servAdh,$routeParams,$location) {
+					 function (servAdh,$routeParams,$location,$rootScope) {
+						$rootScope.pageTitle="Fiche Adherent";
 						
 						var ficheAdherentCtrl = this;
 						//var promesseAdhCourant = servAdh.getAdherent($routeParams.idAdh);
