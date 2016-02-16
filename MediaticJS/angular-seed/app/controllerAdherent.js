@@ -24,7 +24,7 @@ angular.module('AdherentApp', [ 'ServiceAdherent' ])
 	});
 })
 
-.controller('AdherentController', function(servAdh,$rootScope,title,cartAdh) {
+.controller('AdherentController', function(servAdh,$rootScope,title,cartAdh,$location) {
 
 	$rootScope.pageTitle = title;
 	var ctrl = this;
@@ -69,6 +69,10 @@ angular.module('AdherentApp', [ 'ServiceAdherent' ])
 	ctrl.searchAdherent=function(){
 		ctrl.getSearchListResultat();
 		ctrl.isPageRecherche = false;
+	}
+	
+	ctrl.getFiche= function(adh){
+		$location.url("/fiche_adherent/"+adh.id);
 	}
 	
 	

@@ -60,7 +60,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat=" resAdh in adherentCtrl.getlistsearch() " ng-class="{encours : adherentCtrl.isLoaded==false }">
+					<tr ng-click="adherentCtrl.getFiche(resAdh)" ng-repeat=" resAdh in adherentCtrl.getlistsearch() " ng-class="{encours : adherentCtrl.isLoaded==false }">
 						<td>{{resAdh.id}}</td>
 						<td>{{resAdh.nom}}</td>
 						<td>{{resAdh.prenom}}</td>
