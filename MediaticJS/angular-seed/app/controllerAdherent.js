@@ -45,10 +45,10 @@ angular.module('AdherentApp', [ 'ServiceAdherent' ])
 	}
 	
 	
-	
-	ctrl.rech = function(){
-		servAdh.rechAdherent(ctrl.search);
-	}
+//	
+//	ctrl.rech = function(){
+//		servAdh.rechAdherent(ctrl.adherent);
+//	}
 	
 	ctrl.addAdh = function(){
 		servAdh.addAdherent(ctrl.add);
@@ -59,14 +59,19 @@ angular.module('AdherentApp', [ 'ServiceAdherent' ])
 	};
 	
 	ctrl.getSearchListResultat=function(){
-		cartAdh.setMotCle(ctrl.adherent);
-		return servAdh.rechAdherent(ctrl.adherent).then(function(t){
+		cartAdh.setMotCle(ctrl.search);
+		return servAdh.rechAdherent(ctrl.search).then(function(t){
 			listSearchAdh = t;
+			console.log(t);
 			ctrl.isLoaded=true;
+			
 		});
 	}
 	
 	ctrl.searchAdherent=function(){
+		//cartAdh.setMotCle(ctrl.adherent);
+		
+		ctrl.adherent = ctrl.search;
 		ctrl.getSearchListResultat();
 		ctrl.isPageRecherche = false;
 	}

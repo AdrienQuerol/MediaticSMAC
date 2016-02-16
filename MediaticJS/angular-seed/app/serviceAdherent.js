@@ -1,6 +1,6 @@
 angular.module('ServiceAdherent', [])
 
-.factory('servAdh', function($http) {
+.factory('servAdh', function($http,$filter) {
 //	var url = 'http://192.168.1.14:8080/resource/adherent.recherche';
 //	var promise = $http.get(url).then(function(response) {
 //		return response.data;
@@ -17,8 +17,12 @@ angular.module('ServiceAdherent', [])
 			return this.getList();			
 		},
 		
-		modifAdherent : function(adherent) {			
-			$http.post(urlmodif,adherent).then(function(response) {});
+		modifAdherent : function(adherent) {	
+			var adh = angular.copy(adherent);
+			adh.date_naissance = $filter('date')(adh.date_naissance, "MM-dd-yyyy HH:mm:ss.sss");
+			adh.cotisation.debut = $filter('date')(adh.cotisation.debut, "MM-dd-yyyy HH:mm:ss.sss");
+			adh.cotisation.fin = $filter('date')(adh.cotisation.fin, "MM-dd-yyyy HH:mm:ss.sss");
+			$http.post(urlmodif,adh).then(function(response) {});
 			return this.getList();			
 		},
 		
@@ -30,6 +34,7 @@ angular.module('ServiceAdherent', [])
 		},
 		rechAdherent : function(adherent) {
 			return $http.get(urlrech, {params:{nom:adherent.nom, id:adherent.id}}).then(function(response) {
+				console.log("serv");
 				return response.data;
 			});
 			
@@ -38,7 +43,17 @@ angular.module('ServiceAdherent', [])
 		getAdherent: function(idAdh){			
 			var adherentPromise = $http
 					.get(urlgetaccession, {params: {id: idAdh}})
-					.then(function(response){return response.data;});
+					.then(function(response){
+						response.data.date_naissance = new Date(response.data.date_naissance);
+						response.data.cotisation.debut = new Date(response.data.cotisation.debut);
+						response.data.cotisation.fin = new Date(response.data.cotisation.fin);
+						
+						return response.data;
+						
+					
+					});
+			
+			
 			return adherentPromise
 		},
 		

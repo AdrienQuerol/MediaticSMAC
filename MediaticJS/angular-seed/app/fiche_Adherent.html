@@ -4,19 +4,21 @@
 		<div class="col-md-6 col-md-offset-3 encadre">
 			<section>
 				<h1 class="text-center">Fiche adherent</h1>
-				<form ng-submit="ficheAdherentCtrl.updateAdherent()" class="form-horizontal">
+				<form ng-submit="ficheAdherentCtrl.updateAdherent()"
+					class="form-horizontal">
 					<div class="form-group">
 						<label for="nom" class="col-md-4 control-label">Nom</label>
 						<div class="col-md-7 entree">
-							<input id="nom" name="nom" type="text" 
-								class="form-control" required ng-model="ficheAdherentCtrl.formAdherent.adherent.nom" />
+							<input id="nom" name="nom" type="text" class="form-control"
+								required ng-model="ficheAdherentCtrl.formAdherent.adherent.nom" />
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="prenom" class="col-md-4 control-label">Prénom</label>
 						<div class="col-md-7 entree">
-							<input id="prenom" name="prenom" type="text"
-								class="form-control" required ng-model="ficheAdherentCtrl.formAdherent.adherent.prenom" />
+							<input id="prenom" name="prenom" type="text" class="form-control"
+								required
+								ng-model="ficheAdherentCtrl.formAdherent.adherent.prenom" />
 						</div>
 
 					</div>
@@ -25,12 +27,14 @@
 							de naissance</label>
 						<div class="col-md-7 entree">
 							<input id="naissance" name="naissance" type="date"
-								class="form-control" required ng-model="ficheAdherentCtrl.formAdherent.adherent.date_naissance" />
+								class="form-control" required
+								ng-model="ficheAdherentCtrl.formAdherent.adherent.date_naissance" />
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="age" class="col-md-4 control-label">age</label>
 						<div class="col-md-7 champ_lecture_seule">
+							<input id="age" name="age" class="form-control" ng-model="ficheAdherentCtrl.formAdherent.adherent.age" disabled="disabled"/>
 						</div>
 					</div>
 					<div class="form-group">
@@ -38,29 +42,34 @@
 						<div class="col-md-7 entree">
 							<input id="email" name="email" type="email"
 								placeholder="paul.dupont@example.com" class="form-control"
-								required ng-model="ficheAdherentCtrl.formAdherent.adherent.email" />
+								required
+								ng-model="ficheAdherentCtrl.formAdherent.adherent.email" />
 						</div>
 					</div>
 					<div class="form-group adresse">
 						<label for="rue" class="col-md-4 control-label">Adresse</label>
 						<div class="col-md-7">
 							<input id="rue" name="rue" type="text" placeholder="rue"
-								class="form-control" ng-model="ficheAdherentCtrl.formAdherent.adherent.adresse.ligne1"/>
+								class="form-control"
+								ng-model="ficheAdherentCtrl.formAdherent.adherent.adresse.ligne1" />
 						</div>
 						<label for="rue" class="col-md-4 control-label"></label>
 						<div class="col-md-7">
 							<input id="rue" name="rue" type="text" placeholder="rue"
-								class="form-control" ng-model="ficheAdherentCtrl.formAdherent.adherent.adresse.ligne2"/>
+								class="form-control"
+								ng-model="ficheAdherentCtrl.formAdherent.adherent.adresse.ligne2" />
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-md-2 col-md-offset-4">
 							<input id="code_postal" name="code_postal" type="text"
-								placeholder="CP" class="form-control" ng-model="ficheAdherentCtrl.formAdherent.adherent.adresse.codepostal"/>
+								placeholder="CP" class="form-control"
+								ng-model="ficheAdherentCtrl.formAdherent.adherent.adresse.codepostal" />
 						</div>
 						<div class="col-md-5">
 							<input id="ville" name="ville" type="text" placeholder="Ville"
-								class="form-control" ng-model="ficheAdherentCtrl.formAdherent.adherent.adresse.ville"/>
+								class="form-control"
+								ng-model="ficheAdherentCtrl.formAdherent.adherent.adresse.ville" />
 						</div>
 					</div>
 					<div class="form-group">
@@ -68,14 +77,16 @@
 							cotisation</label>
 						<div class="col-md-7">
 							<input id="cotisation" name="cotisation" type="date"
-								class="form-control" value="2015-07-08" ng-model="ficheAdherentCtrl.formAdherent.adherent.cotisation" />
+								class="form-control" ng-model="ficheAdherentCtrl.formAdherent.adherent.cotisation.debut" />
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="fin_abonnement" class="col-md-4 control-label">Fin
 							d'abonnement</label>
 						<div class="col-md-7 champ_lecture_seule">
-							<span>{{ficheAdherentCtrl.formAdherent.adherent.cotisation.fin}}</span>
+							<input id="cotisation" name="cotisation" type="date"
+								class="form-control" ng-model="ficheAdherentCtrl.formAdherent.adherent.cotisation.fin"
+								disabled="disabled" />
 						</div>
 					</div>
 					<div class="form-group">
@@ -94,83 +105,82 @@
 
 
 
-			<section>
-					<h1 class="text-center">Nouvel emprunt</h1>
-					<form class="form-horizontal">
-						<div class="form-group obligatoire">
-							<label class="col-md-4 control-label" for="titleM">Titre
-								du m&eacute;dia</label>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="titleM"
-									id="titlem" />
-							</div>
-						</div>
-						<div class="form-group obligatoire">
-							<label class="col-md-4 control-label" for="date-emprunt">Date</label>
-							<div class="col-md-6">
-								<input type="date" class="form-control" name="date_emprunt"
-									id="date_emprunt" />
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-5">
-								<input class="btn btn-success" type="submit" id="ajoutEmprunt"
-									value="Ajouter emprunt" />
-							</div>
-						</div>
-					</form>
-				</section>
-				
-				
-				
-				<section>
-					<h1 class="text-center">Historique des emprunts</h1>
-					<table class="table table-striped table-hover tableau">
-						<thead>
-							<tr>
-								<th>Titre
-									<div class="carets">
-										<span class="caret-inv"></span> <span class="caret"></span>
-									</div>
-								</th>
-								<th>Type
-									<div class="carets">
-										<span class="caret-inv"></span> <span class="caret"></span>
-									</div>
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Pouet</td>
-								<td>Livre</td>
-							</tr>
-							<tr>
-								<td>Pouet</td>
-								<td>Livre</td>
-							</tr>
-							<tr>
-								<td>Pouet</td>
-								<td>Livre</td>
-							</tr>
-							<tr>
-								<td>Pouet</td>
-								<td>Livre</td>
-							</tr>
-							<tr>
-								<td>Pouet</td>
-								<td>Livre</td>
-							</tr>
-							<tr>
-								<td>Pouet</td>
-								<td>Livre</td>
-							</tr>
-						</tbody>
-						<tfoot>
-
-						</tfoot>
-					</table>
-				</section>
+<section>
+	<h1 class="text-center">Nouvel emprunt</h1>
+	<form class="form-horizontal">
+		<div class="form-group obligatoire">
+			<label class="col-md-4 control-label" for="titleM">Titre du
+				m&eacute;dia</label>
+			<div class="col-md-6">
+				<input type="text" class="form-control" name="titleM" id="titlem" />
 			</div>
 		</div>
-	</section>
+		<div class="form-group obligatoire">
+			<label class="col-md-4 control-label" for="date-emprunt">Date</label>
+			<div class="col-md-6">
+				<input type="date" class="form-control" name="date_emprunt"
+					id="date_emprunt" />
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-6 col-md-offset-5">
+				<input class="btn btn-success" type="submit" id="ajoutEmprunt"
+					value="Ajouter emprunt" />
+			</div>
+		</div>
+	</form>
+</section>
+
+
+
+<section>
+	<h1 class="text-center">Historique des emprunts</h1>
+	<table class="table table-striped table-hover tableau">
+		<thead>
+			<tr>
+				<th>Titre
+					<div class="carets">
+						<span class="caret-inv"></span> <span class="caret"></span>
+					</div>
+				</th>
+				<th>Type
+					<div class="carets">
+						<span class="caret-inv"></span> <span class="caret"></span>
+					</div>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Pouet</td>
+				<td>Livre</td>
+			</tr>
+			<tr>
+				<td>Pouet</td>
+				<td>Livre</td>
+			</tr>
+			<tr>
+				<td>Pouet</td>
+				<td>Livre</td>
+			</tr>
+			<tr>
+				<td>Pouet</td>
+				<td>Livre</td>
+			</tr>
+			<tr>
+				<td>Pouet</td>
+				<td>Livre</td>
+			</tr>
+			<tr>
+				<td>Pouet</td>
+				<td>Livre</td>
+			</tr>
+		</tbody>
+		<tfoot>
+
+		</tfoot>
+	</table>
+</section>
+</div>
+</div>
+</section>

@@ -32,7 +32,7 @@ angular.module('app.media.rech',[])
 				
 				rechmediaCtrl.getSearchListResultat=function(){
 					cartMedia.setMotCle(rechmediaCtrl.media);
-					return serviceMedia.getSearchMedia(rechmediaCtrl.media).then(function(t){s
+					return serviceMedia.getSearchMedia(rechmediaCtrl.media).then(function(t){
 						listSearchMedia = t;
 						rechmediaCtrl.isLoadedMedia=true;
 					});

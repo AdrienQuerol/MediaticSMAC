@@ -5,9 +5,9 @@
 	<form ng-submit="adherentCtrl.getSearchListResultat()" class="search form-inline"">
 		<div class="search">
 			<label class="search" for="Recherche">Recherche adhérent </label> 
-			<label class="search" for="id">Identifiant</label> <input ng-model="adherentCtrl.adherent.id" type="text"
+			<label class="search" for="id">Identifiant</label> <input ng-model="adherentCtrl.search.id" type="text"
 				class="form-control" id="identifiant"> 
-			<label class="search" for="autor">Nom</label> <input ng-model="adherentCtrl.adherent.nom" type="text" name="nom"
+			<label class="search" for="autor">Nom</label> <input ng-model="adherentCtrl.search.nom" type="text" name="nom"
 				class="form-control" id="nom"> 
 			<input  class="pos btn btn-success" type="submit" id="rechercher" value="OK">
 
@@ -90,4 +90,6 @@
 		</div>
 	</div>
 </section>
+
+{{adherentCtrl.getlistsearch()}}
 
