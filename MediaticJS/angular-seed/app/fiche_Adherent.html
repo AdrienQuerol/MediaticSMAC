@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 encadre">
 			<section>
-				<h1 class="text-center">Fiche adherent</h1>
+				<h1 class="text-center">Fiche adh&eacute;rent</h1>
 				<form ng-submit="ficheAdherentCtrl.updateAdherent()"
 					class="form-horizontal">
 					<div class="form-group">
@@ -153,7 +153,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat="emprunt in ficheAdherentCtrl.formAdherent.adherent.emprunt">
+							<tr ng-click="ficheAdherentCtrl.getFiche(emprunt.media)" ng-repeat="emprunt in ficheAdherentCtrl.formAdherent.adherent.emprunt">
 								<td>{{emprunt.media.id}}</td>
 								<td>{{emprunt.media.titre}}</td>
 								<td>{{emprunt.depart}}</td>

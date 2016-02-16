@@ -24,8 +24,8 @@ angular.module('ServiceAdherent', [])
 				adh.cotisation.debut = $filter('date')(adh.cotisation.debut, "MM-dd-yyyy HH:mm:ss.sss");
 				adh.cotisation.fin = $filter('date')(adh.cotisation.fin, "MM-dd-yyyy HH:mm:ss.sss");
 			}
-			$http.post(urlmodif,adh).then(function(response) {});
-			return this.getList();			
+			return $http.post(urlmodif,adh).then(function(response) {});
+					
 		},
 		
 		//adherent = {nom, prenom }
@@ -57,7 +57,7 @@ angular.module('ServiceAdherent', [])
 					});
 			
 			
-			return adherentPromise
+			return adherentPromise;
 		},
 		
 		

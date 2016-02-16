@@ -19,7 +19,7 @@
 			)
 			.controller(
 					'ficheAdherentController',
-					 function (servAdh,$routeParams) {
+					 function (servAdh,$routeParams,$location) {
 						
 						var ficheAdherentCtrl = this;
 						//var promesseAdhCourant = servAdh.getAdherent($routeParams.idAdh);
@@ -31,6 +31,10 @@
 						    	servAdh.modifAdherent(ficheAdherentCtrl.formAdherent.adherent);
 						 }
 						 
+						 ficheAdherentCtrl.getFiche= function(media){
+							 console.log(media);
+								$location.url("/fiche_media/"+media.id);
+							}
 						 
 						// ficheAdherentCtrl.data={};
 						// recuperation du l'adherent 
@@ -43,7 +47,8 @@
 								//console.log(t);
 						});
 
-							
+					
+						
 			    }
 			);
 })();
