@@ -20,7 +20,7 @@
 			.module('app.services.emprunts', [])
 			.factory(
 					'serviceEmprunts',
-					function ($http) {
+					function ($http, $q, $timeout) {
 
 
 						function ListeEmprunts () {
@@ -58,13 +58,12 @@
 						}
 						
 						ListeEmprunts.prototype.rechercherParMedia = function (media) {
-							
-							return $http
+							var promise = $http
 									.get(this.urlGetMedia, {params: {id: media.id}})
 									.then(
 											function (reponse) {
 												var emprunteurs = reponse.data.emprunteurs;//? reponse.data.emprunteurs : [];
-												return emprunteurs.map(
+												var resultat = emprunteurs.map(
 														function (emprunteur) {
 															return new Emprunt(
 																	emprunteur.adherent,
@@ -74,8 +73,27 @@
 															);
 														}
 												);
+												return resultat;
 											}
 									);
+							console.warn('TODO A supprimer avant MEP');
+							console.log('J\'ai appelé le serveur, j\'attend sa réponse');
+							var defer= $q.defer();
+							promise.then(function (resultat) {
+								console.log('J\'ai la réponse du serveur ... je fait poireauter l\'utilisateur ');
+								defer.promise.then(
+										function () {
+											return resultat;
+										}
+								);
+								$timeout(function(){
+									console.log('Faudrait pas perdre un client, je fini de le faire poireauter.');
+									defer.resolve(resultat);
+								},5000);
+								return resultat;
+							});
+							return defer.promise;
+//							return promise;
 						};
 						
 						ListeEmprunts.prototype.DernierEmpruntDuMedia = function (media) {

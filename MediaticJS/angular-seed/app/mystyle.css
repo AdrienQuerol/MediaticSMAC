@@ -195,6 +195,23 @@ th span.fleche_bas{
 	padding-left: 12px;
 }
 
+#chargement.chargementEnCours {
+	text-align: center;
+	display: inherit;
+}
+
+#chargement {
+	display: none;
+}
+
+#conteneurDynamique.chargementEnCours {
+	display: none;
+}
+
+#conteneurDynamique {
+	display: inherit;
+}
+
 /* ---------------- Login ------------------- */
 
 .imgfondLog{

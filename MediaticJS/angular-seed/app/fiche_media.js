@@ -72,6 +72,7 @@
 									.then(
 											function (liste) {
 												ficheMediaCtrl.listeEmprunts = liste;
+												ficheMediaCtrl.empruntsCharges = true;
 //												ficheMediaCtrl.empruntsCharges = true;
 											}
 									);
