@@ -4,7 +4,7 @@ angular.module('app.media.nouv',[])
 	.config(function($routeProvider,$httpProvider) {
 
 			$routeProvider.when('/nouveau_media', {
-				templateUrl : 'nouveau_media.html',
+				templateUrl : 'view_media/nouveau_media.html',
 				controller : 'NouvMediaController',
 				controllerAs : 'nouvmediaCtrl'
 			});

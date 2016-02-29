@@ -2,7 +2,7 @@ angular.module('AdherentApp', [ 'ServiceAdherent' ])
 
 .config(function($routeProvider) {
 	$routeProvider.when('/nouveau_adherent', {
-		templateUrl : 'nouveau_adherent.html',
+		templateUrl : 'view_adherent/nouveau_adherent.html',
 		controller : 'AdherentController',
 		controllerAs : 'adherentCtrl',
 		resolve: {
@@ -13,7 +13,7 @@ angular.module('AdherentApp', [ 'ServiceAdherent' ])
 
 	}),
 	$routeProvider.when('/adherents', {
-		templateUrl : 'adherents.html',
+		templateUrl : 'view_adherent/adherents.html',
 		controller : 'AdherentController',
 		controllerAs : 'adherentCtrl',
 		resolve: {

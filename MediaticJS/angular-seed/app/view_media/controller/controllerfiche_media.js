@@ -10,7 +10,7 @@
 								.when(
 										'/fiche_media/:idMedia',
 										{
-												templateUrl : 'fiche_media.html',
+												templateUrl : 'view_media/fiche_media.html',
 												controller : 'ficheMediaController',
 												controllerAs : 'ficheMediaCtrl'
 										}

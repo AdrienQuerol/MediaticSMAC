@@ -9,7 +9,7 @@
 								.when(
 										'/fiche_adherent/:idAdh',
 										{
-												templateUrl : 'fiche_Adherent.html',
+												templateUrl : 'view_adherent/fiche_Adherent.html',
 												controller : 'ficheAdherentController',
 												controllerAs : 'ficheAdherentCtrl'
 										}

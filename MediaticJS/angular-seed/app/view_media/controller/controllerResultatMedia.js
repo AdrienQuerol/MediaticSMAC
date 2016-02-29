@@ -4,7 +4,7 @@ angular.module('app.media.rech',[])
 	.config(function($routeProvider,$httpProvider) {
 
 			$routeProvider.when('/medias', {
-				templateUrl : 'medias.html',
+				templateUrl : 'view_media/medias.html',
 				controller : 'RechMediaController',
 				controllerAs : 'rechmediaCtrl'
 			});
