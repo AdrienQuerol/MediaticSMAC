@@ -5,7 +5,8 @@ angular.module('ServiceLogin', [])
 
 	return {
 		verifLogin : function(log) {
-			var url = 'http://192.168.1.14:8080/resource/connexion.login';
+			var racineWebServices = 'http://localhost:8080/api';
+			var url = racineWebServices + '/authenticate';
 			$http.post(url, log).then(function(response) {});						
 		}		
 		

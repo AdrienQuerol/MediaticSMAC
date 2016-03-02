@@ -5,10 +5,12 @@ angular.module('ServiceAdherent', [])
 //	var promise = $http.get(url).then(function(response) {
 //		return response.data;
 //	});
-	var urlrech = 'http://192.168.1.14:8080/resource/adherent.recherche';
-	var urlmodif = 'http://192.168.1.14:8080/resource/adherent.modification';
-	var urlgetaccession="http://192.168.1.14:8080/resource/adherent.accession";
-	var urlcrea = 'http://192.168.1.14:8080/resource/adherent.creation';
+	var racineServeur = 'http://localhost:8080/api';
+	var racineAdherent = racineServeur + '/adherent';
+	var urlrech = racineAdherent;
+	var urlmodif = racineAdherent;
+	var urlgetaccession=racineAdherent;
+	var urlcrea = racineAdherent;
 	var urlgetpage = 'http://192.168.1.14:8080/resource/adherent.recherche.taille';
 	
 	return {

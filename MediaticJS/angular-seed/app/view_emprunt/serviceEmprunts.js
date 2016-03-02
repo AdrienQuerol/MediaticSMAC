@@ -25,9 +25,9 @@
 
 						function ListeEmprunts () {
 
-							this.racineServeur = 'http://192.168.1.14:8080/resource';
+							this.racineServeur = 'http://localhost:8080/api';
 							this.urlAjoutEmprunt = this.racineServeur + '/emprunt.ajout';
-							this.urlGetMedia     = this.racineServeur + '/media.accession';
+							this.urlGetMedia     = this.racineServeur + '/medias';
 							this.urlGetAdherent  = this.racineServeur + '/adherent.accession';
 							
 						}

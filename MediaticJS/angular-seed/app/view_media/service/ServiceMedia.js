@@ -3,10 +3,13 @@
 angular.module('app.services.medias',[])
 		.factory('serviceMedia',function($http){
 			
-			var urlgetaccession="http://192.168.1.14:8080/resource/media.accession";
-			var urlgetrecherche="http://192.168.1.14:8080/resource/media.recherche";
-			var urlpostmodif="http://192.168.1.14:8080/resource/media.modification";
-			var urlpostcreation="http://192.168.1.14:8080/resource/media.creation";
+			var racineWebServices = "http://localhost:8080/api";
+			var racineMedias = racineWebServices + "/medias";
+
+			var urlgetaccession=racineMedias;
+			var urlgetrecherche=racineMedias + '/search';
+			var urlpostmodif=racineMedias;
+			var urlpostcreation=racineMedias;
 			
 			
 			return {
