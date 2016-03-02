@@ -46,8 +46,10 @@ angular.module('app.services.medias',[])
 
 				getMedia: function(idMedia){
 					var mediaPromise = $http
-							.get(urlgetaccession, {params: {id: idMedia}})
-							.then(function(response){return response.data;});
+							.get(urlgetaccession + '/' + idMedia)
+							.then(function(response){
+								return response.data;
+							});
 					return mediaPromise
 				},
 

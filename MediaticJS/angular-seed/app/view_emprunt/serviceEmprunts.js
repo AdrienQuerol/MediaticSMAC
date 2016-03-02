@@ -17,18 +17,26 @@
 
 
 	angular
-			.module('app.services.emprunts', [])
+			.module(
+					'app.services.emprunts',
+					[
+						'app.services.medias',
+						'ServiceAdherent'
+					]
+			)
 			.factory(
 					'serviceEmprunts',
 					function ($http, $q, $timeout) {
 
-
 						function ListeEmprunts () {
 
-							this.racineServeur = 'http://localhost:8080/api';
-							this.urlAjoutEmprunt = this.racineServeur + '/emprunt.ajout';
-							this.urlGetMedia     = this.racineServeur + '/medias';
-							this.urlGetAdherent  = this.racineServeur + '/adherent.accession';
+							this.racineServeur  = 'http://localhost:8080/api';
+							this.racineEmprunts = this.racineServeur + '/emprunts';
+							this.urlAjoutEmprunt         = this.racineEmprunts + '/emprunt.ajout';
+							this.urlRechercheParMedia    = this.racineEmprunts + '/media';
+							this.urlRechercheParAdherent = this.racineEmprunts + '/adherent';
+//							this.urlGetMedia     = this.racineServeur + '/medias';
+//							this.urlGetAdherent  = this.racineServeur + '/adherent.accession';
 							
 						}
 						
@@ -43,37 +51,44 @@
 								);
 						}
 						
-						ListeEmprunts.prototype.rechercherParAdherent = function (adh) {	
+						ListeEmprunts.prototype.rechercherParAdherent = function (adh) {
 							return $http
-									.get(this.urlGetAdherent, {params: {id: adh.id}})
+									.get(this.urlRechercheParAdherent + '/' + adh.id)
 									.then(
 											function (reponse) {
-												return reponse.data.emprunt.map(
-														function (emp) {
-															return new Emprunt(adh, emp.media, emp.depart, emp.retour);
-														}
-												);
+												var emprunts = reponse.data;
+												return emprunts
+														.map(
+																function (emp) {
+																	return new Emprunt(
+																			adh,
+																			emp.media,
+																			emp.depart,
+																			emp.retour
+																	);
+																}
+														);
 											}
 									);
 						}
 						
 						ListeEmprunts.prototype.rechercherParMedia = function (media) {
 							var promise = $http
-									.get(this.urlGetMedia, {params: {id: media.id}})
+									.get(this.urlRechercheParMedia + '/' + media.id)
 									.then(
 											function (reponse) {
-												var emprunteurs = reponse.data.emprunteurs;//? reponse.data.emprunteurs : [];
-												var resultat = emprunteurs.map(
-														function (emprunteur) {
-															return new Emprunt(
-																	emprunteur.adherent,
-																	media,
-																	emprunteur.depart,
-																	emprunteur.retour
-															);
-														}
-												);
-												return resultat;
+												var emprunts = reponse.data;
+												return emprunts
+														.map(
+																function (emprunteur) {
+																	return new Emprunt(
+																			emprunteur.adherent,
+																			media,
+																			emprunteur.depart,
+																			emprunteur.retour
+																	);
+																}
+														);
 											}
 									);
 							console.warn('TODO A supprimer avant MEP');
