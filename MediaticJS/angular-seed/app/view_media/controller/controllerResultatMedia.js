@@ -51,7 +51,7 @@ angular.module('app.media.rech',[])
 				}
 				
 				if(angular.isDefined(rechmediaCtrl.media.titre) || angular.isDefined(rechmediaCtrl.media.auteur)
-						|| angular.isDefined(rechmediaCtrl.media.type)){
+						|| angular.isDefined(rechmediaCtrl.media.type_media)){
 					rechmediaCtrl.searchMedia();
 				}
 	})

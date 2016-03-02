@@ -30,6 +30,14 @@ angular
 		})
 
 		.controller('appContoller', function() {
-
+			var appController=this;
+		
+			appController.Deconnection= function(){
+				//RechMediaController.isPageRecherche=false;
+				$location.url("/login");
+			}
+			
+			
+			
 		});
 
